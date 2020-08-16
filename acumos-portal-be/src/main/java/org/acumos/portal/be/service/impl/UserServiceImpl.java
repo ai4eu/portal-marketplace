@@ -140,7 +140,7 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService 
         else 
         	mailData.setSubject("New User Account Notification");
 
-        mailData.setFrom("no-reply@acumos.org");
+        mailData.setFrom(env.getProperty(PortalConstants.SENDER_MAIL_KEY));
         mailData.setTemplate("accountCreated.ftl");
         List<String> to = new ArrayList<String>();
         to.add(mlpUser.getEmail());
