@@ -2063,7 +2063,7 @@ padding: 20px;background:#e5e5e5;}
 .listview-title-container .griditem-title .griditem-title-text {margin-left:0;text-overflow: ellipsis; overflow: hidden;white-space: nowrap;float: left; max-width: 98%;}
 
 .tilecontainer1 .griditem-title {max-width: 200px;text-overflow: clip !important; overflow: visible !important;}
-.tilecontainer1 .griditem-title .griditem-title-text2 {margin-left:0;text-overflow: ellipsis; overflow: hidden;white-space: nowrap;float: left; max-width: 65%;}
+.tilecontainer1 .griditem-title .griditem-title-text2 {margin-left:0;text-overflow: ellipsis; overflow: hidden;white-space: nowrap;float: left; max-width: 95%;}
 
 .fed-search-container .admin-btn-search {display: inline-block; width: 40px; text-align:center; border-radius: 4px; border: 1px solid #d5d5d5; margin-left: 4px;background: #fff; height: 30px; cursor: pointer; }
 .fed-search-container .admin-btn-search i {line-height: 30px;}
