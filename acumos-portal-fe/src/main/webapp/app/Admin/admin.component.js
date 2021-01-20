@@ -2294,8 +2294,8 @@ angular.module('admin').filter('abs', function () {
                 $scope.carousel_bgColor = color;
             }
 
-            $scope.scCharLimit = 140;
-            $scope.headlineCharLimit = 60;
+            $scope.scCharLimit = 1000;
+            $scope.headlineCharLimit = 100;
 
             $scope.topSC = "";
             $scope.updateTopSC = function (text) {
