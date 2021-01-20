@@ -292,7 +292,7 @@ limitations under the License.
 									<li><img src="images/solution2.jpg" alt=""
 										ng-click="onClickModel(val.solutionId, val.ownerId)"
 										title="solution"></li>
-									<li><label class="rel-title">{{val.name.toString().split("_").join(" ")}}</label> <span
+									<li><label class="rel-title" ng-click="onClickModel(val.solutionId, val.ownerId)">{{val.name.toString().split("_").join(" ")}}</label> <span
 										class="rating"> <span><i
 												class="material-icons fa fa-star"
 												ng-class="{'fa-star1': val.solutionRatingAvg == null || val.solutionRatingAvg < 1}"></i></span>
