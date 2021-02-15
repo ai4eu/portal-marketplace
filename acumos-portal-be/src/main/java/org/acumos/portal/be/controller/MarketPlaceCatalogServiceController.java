@@ -326,7 +326,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 				data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
-			data.setResponseDetail("Unable to delete model image due to no image found on Nexus");
+			data.setResponseDetail("Unable to delete model image due to no image found on Nexus " + e.getMessage());
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			log.error("AcumosServiceException Occurred while deleteSolutionArtifacts()", e);
 		} catch (URISyntaxException uriEx) {
