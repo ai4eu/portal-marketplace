@@ -220,6 +220,7 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
                 $scope.protoNode=proto;
                 var protoJson=proto;
                 jsonProtoNode.set($scope.solutionDetails.solutionName,protoJson);
+                console.log("PETER protoJson "+protoJson)
             }).error(function(response){
             	document.getElementById("loading").style.display = "none";
             	$scope.titlemsg = ALERT;
@@ -267,6 +268,8 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
                     });
                 }
             });
+            console.log("PETER capabilityJson "+capabilityJson);
+            console.log("PETER requirementJson "+requirementJson);
             var def = {
                 "id": tgif.self.name,
                 "name": tgif.self.name,
