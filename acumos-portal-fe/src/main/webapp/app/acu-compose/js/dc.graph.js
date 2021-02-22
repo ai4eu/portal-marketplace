@@ -4294,8 +4294,6 @@ dc_graph.diagram = function (parent, chartGroup) {
                 }
             });
         });
-        // Peter: always skip layout for now (it is useless with cycles)
-        skip_layout = true;
         if(skip_layout) {
             _running = false;
             // init_node_ports?
