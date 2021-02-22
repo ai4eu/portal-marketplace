@@ -220,7 +220,7 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
                 $scope.protoNode=proto;
                 var protoJson=proto;
                 jsonProtoNode.set($scope.solutionDetails.solutionName,protoJson);
-                console.log("PETER protoJson "+protoJson)
+                console.log("PETER protoJson "+json.stringify(protoJson))
             }).error(function(response){
             	document.getElementById("loading").style.display = "none";
             	$scope.titlemsg = ALERT;
@@ -268,8 +268,8 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
                     });
                 }
             });
-            console.log("PETER capabilityJson "+capabilityJson);
-            console.log("PETER requirementJson "+requirementJson);
+            console.log("PETER capabilityJson "+json.stringify(capabilityJson));
+            console.log("PETER requirementJson "+json.stringify(requirementJson));
             var def = {
                 "id": tgif.self.name,
                 "name": tgif.self.name,
