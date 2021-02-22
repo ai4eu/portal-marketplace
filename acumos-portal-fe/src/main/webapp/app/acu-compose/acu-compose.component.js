@@ -220,7 +220,8 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
                 $scope.protoNode=proto;
                 var protoJson=proto;
                 jsonProtoNode.set($scope.solutionDetails.solutionName,protoJson);
-                console.log("PETER protoJson "+JSON.stringify(protoJson))
+                console.log("PETER protoJson=");
+                console.log(protoJson);
             }).error(function(response){
             	document.getElementById("loading").style.display = "none";
             	$scope.titlemsg = ALERT;
@@ -268,8 +269,10 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
                     });
                 }
             });
-            console.log("PETER capabilityJson "+JSON.stringify(capabilityJson));
-            console.log("PETER requirementJson "+JSON.stringify(requirementJson));
+            console.log("PETER capabilityJson=");
+            console.log(capabilityJson);
+            console.log("PETER requirementJson=");
+            console.log(requirementJson);
             var def = {
                 "id": tgif.self.name,
                 "name": tgif.self.name,
@@ -2905,7 +2908,8 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
             .clickable(true)
             .selection(dc_graph.tip.select_port())
             .content(function(d, k) {
-            	console.log(d);
+            	console.log('PETER port_tips.d=');
+                console.log(d);
                 if(is_wildcard_type(d.orig.value.originalType)){
                     jsonProtoMap = d.orig.value.fullType;
                     jsonProto = null;
