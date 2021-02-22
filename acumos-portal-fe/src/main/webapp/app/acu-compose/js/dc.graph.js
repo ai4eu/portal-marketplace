@@ -4411,7 +4411,7 @@ dc_graph.diagram = function (parent, chartGroup) {
                 }),
                 constraints
             );
-            console_log("engine.start = "+engine.start());
+            console.log("engine.start = "+engine.start());
             engine.stop();
         }
         return this;
@@ -8459,7 +8459,7 @@ dc_graph.layered_layout = function(id) {
             subengine.on('end', function(nodes, edges) {
                 resolve({nodes: nodes, edges: edges});
             });
-            console_log("subengine.start = "+subengine.start());
+            console.log("subengine.start = "+subengine.start());
             subengine.stop();
         }).then(function(layout) {
             // copy positions back into the subgraph (and hence supergraph)
