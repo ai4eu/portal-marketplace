@@ -203,13 +203,19 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
         }
         else
         	$scope.selectedIndex = type+ver;
-        $http.get(_catalog.fModelUrl(_components.get(type+'+'+nodeVersion))).success(function(tgif) {
+        var url1 = _catalog.fModelUrl(_components.get(type+'+'+nodeVersion));
+        console.log("url1 = ");
+        console.log(url1);
+        $http.get(url1).success(function(tgif) {
             nodeId = _components.get(type+'+'+nodeVersion).solutionId;
             $scope.solutionDetails=_components.get(type+'+'+nodeVersion);
             $scope.showProperties=null;
             $scope.packageName= JSON.stringify(tgif.self.name);
             $scope.requireCalls= tgif.services.calls;
             $scope.capabilityProvides=tgif.services.provides;
+            console.log("calls/provides=");
+            console.log(tgif.services.calls);
+            console.log(tgif.services.provides);
             draggedNodes.set(data.nodeId, $scope.solutionDetails);
             var url= build_url(options.protobuf, {
                 userId: get_userId(),
