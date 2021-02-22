@@ -4353,10 +4353,12 @@ dc_graph.diagram = function (parent, chartGroup) {
                     // should do this only once
                     _diagram.renderer().fireTSEvent(_dispatch, drawState);
                 }
-                if(_needsRedraw || _diagram.timeLimit() && elapsed > _diagram.timeLimit()) {
-                    console.log('cancelled');
-                    _diagram.layoutEngine().stop();
-                }
+                // if(_needsRedraw || _diagram.timeLimit() && elapsed > _diagram.timeLimit()) {
+                //     console.log('cancelled');
+                //     _diagram.layoutEngine().stop();
+                // }
+                // immediately stop after the first tick (effectively disable automatic layouting)
+                _diagram.layoutEngine().stop();
             })
             .on('end.diagram', function(nodes, edges, clusters) {
                 if(!_diagram.showLayoutSteps()) {
