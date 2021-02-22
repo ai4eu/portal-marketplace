@@ -139,7 +139,7 @@ var cola;
                     f_x2 = f_x1;
                     flag = 0;
                 }
-                if (iterationCounter++ > 100) {
+                if (iterationCounter++ > 0) {
                     break;
                 }
             }
