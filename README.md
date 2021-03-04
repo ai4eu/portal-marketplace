@@ -4,7 +4,7 @@ This repository holds projects that together comprise the Marketplace Backend an
 
 ## Build Prerequisites
 
-* JDK 1.8
+* JDK 11
 * Spring STS 3.8.x (https://spring.io/tools/sts/all) 
 * Git Shell (https://git-for-windows.github.io/) or SourceTree (https://www.sourcetreeapp.com/) for Cloning & pushing the code changes. 
 * Maven 3.x
