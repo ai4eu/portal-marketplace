@@ -4,13 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.acumos.portal-marketplace</groupId>
 	<artifactId>portal-marketplace-parent</artifactId>
-	<version>4.0.14-ai4eu-v3</version>
+	<version>4.0.14-ai4eu-v4</version>
 	<packaging>pom</packaging>
 	<name>Acumos Portal Marketplace parent project</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<modules>
 		<!-- Child modules do NOT name this parent. -->
