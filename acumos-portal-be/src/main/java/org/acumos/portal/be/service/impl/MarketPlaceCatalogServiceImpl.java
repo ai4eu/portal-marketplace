@@ -351,16 +351,18 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 
 					for (MLPArtifact mlp : mlpArtifactsList) {
 						boolean deleteNexus = false;
-						// Delete the file from the Nexus
 						log.info("mlp.getUri ----->>" + mlp.getUri());
 						log.info("mlp.getArtifactTypeCode ----->>" + mlp.getArtifactTypeCode());
 						
 						try {
 							if ("DI".equals(mlp.getArtifactTypeCode())) {
-								DockerClient dockerClient = DockerClientFactory.getDockerClient(dockerConfiguration);
-								DeleteImageCommand deleteImg = new DeleteImageCommand(mlp.getUri());
-								deleteImg.setClient(dockerClient);
-								deleteImg.execute();
+								String ownDockerRegistryPrefix = env.getProperty("docker.imagetag.prefix");
+								if (mlp.getUri().startsWith(ownDockerRegistryPrefix)) {
+									DockerClient dockerClient = DockerClientFactory.getDockerClient(dockerConfiguration);
+									DeleteImageCommand deleteImg = new DeleteImageCommand(mlp.getUri());
+									deleteImg.setClient(dockerClient);
+									deleteImg.execute();
+								}
 								deleteNexus = true;
 							} else {
 								// Delete the file from the Nexus
