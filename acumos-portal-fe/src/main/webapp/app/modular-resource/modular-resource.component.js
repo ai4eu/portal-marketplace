@@ -825,8 +825,12 @@ angular.module('modelResource')
 		    $scope.dockerURI = '';
 		    $scope.$watchGroup(['host', 'port', 'image', 'tag'], function() {
 		    	  
-		    	  if($scope.host && $scope.image && $scope.port){
-		    		  $scope.dockerURI = $scope.host + ':' + $scope.port + '/' + $scope.image;
+		    	  if($scope.host && $scope.image){
+		    		  $scope.dockerURI = $scope.host;
+		    		  if($scope.port){
+		    		      $scope.dockerURI += ':' + $scope.port;
+		    		  }
+		    		  $scope.dockerURI += '/' + $scope.image;
 		    		  if($scope.tag){
 		    			  $scope.dockerURI += ':' + $scope.tag;
 		    		  }
