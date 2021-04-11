@@ -1372,9 +1372,7 @@ angular
 						
 						/*Deploy to Local method*/
 						$scope.deployLocalPackage = function(){
-							$scope.performSVScan($scope.solutionId, $scope.revisionId, "deploy", function() {
-								$window.location.assign("/package/getSolutionZip/" + $scope.solutionId + "/" + $scope.revisionId);
-							});
+							$window.location.assign("/package/getSolutionZip/" + $scope.solutionId + "/" + $scope.revisionId);
 						}
 						
 						apiService.getKubernetesDocUrl().then( function(response){

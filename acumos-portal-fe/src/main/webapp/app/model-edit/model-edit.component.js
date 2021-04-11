@@ -1809,9 +1809,7 @@ angular
 						};
 						
 						$scope.deployLocalPackage = function(){
-							$scope.performSVScan($scope.solution.solutionId, $scope.revisionId, "deploy", function() {
-								$window.location.assign("/package/getSolutionZip/" + $scope.solution.solutionId + "/" + $scope.revisionId);
-							});
+							$window.location.assign("/package/getSolutionZip/" + $scope.solution.solutionId + "/" + $scope.revisionId);
 						}
 						
 						apiService.getKubernetesDocUrl().then( function(response){
