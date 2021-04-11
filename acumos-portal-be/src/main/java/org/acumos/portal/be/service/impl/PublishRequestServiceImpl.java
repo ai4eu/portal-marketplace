@@ -280,8 +280,8 @@ public class PublishRequestServiceImpl extends AbstractServiceImpl implements Pu
 		// If request is approved then change the status of solution revision
 		if (isRequestApproved) {
 			dataServiceRestClient.addSolutionToCatalog(updatedRequest.getSolutionId(), updatedRequest.getCatalogId());
-			boolean isLicenseAssetRegisterd = false;
-			isLicenseAssetRegisterd = licensingService.licenseAssetRegister(updatedRequest.getSolutionId(), updatedRequest.getRevisionId(), updatedRequest.getRequestUserId());
+			boolean isLicenseAssetRegisterd = true;
+			// isLicenseAssetRegisterd = licensingService.licenseAssetRegister(updatedRequest.getSolutionId(), updatedRequest.getRevisionId(), updatedRequest.getRequestUserId());
 			if(isLicenseAssetRegisterd) {
 				generateNotification("Solution " + updatedPublishRequest.getSolutionName() + " Published Successfully",
 						updatedPublishRequest.getRequestUserId());
