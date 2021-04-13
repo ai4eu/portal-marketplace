@@ -29,12 +29,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.web.server.WebServer;
-import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-//import org.springframework.boot.context.embedded.AbstractConfigurableEmbeddedServletContainer;
+import org.springframework.boot.context.embedded.AbstractConfigurableEmbeddedServletContainer;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
-import org.springframework.boot.web.servlet.server.AbstractServletWebServerFactory;
-import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 
 
 public class WebConfigurerTest {
@@ -42,8 +38,8 @@ public class WebConfigurerTest {
 	 private static final int _DEFAULT_PORT = 8080;
 
 	 private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
-	 private AbstractServletWebServerFactory dummyconfigurableEmbeddedServletContainer = new AbstractServletWebServerFactory() {
+	
+	 private AbstractConfigurableEmbeddedServletContainer dummyconfigurableEmbeddedServletContainer = new AbstractConfigurableEmbeddedServletContainer() {
 		 
 		private File root;
 		
@@ -70,12 +66,6 @@ public class WebConfigurerTest {
 		@Override
 		public File getDocumentRoot() {
 			return root;	
-		}
-
-		@Override
-		public WebServer getWebServer(ServletContextInitializer... initializers) {
-			// TODO Auto-generated method stub
-			return null;
 		}		
 	};		
 	
