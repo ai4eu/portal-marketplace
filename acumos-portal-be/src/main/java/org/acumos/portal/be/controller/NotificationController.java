@@ -103,7 +103,7 @@ public class NotificationController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception occured while createNotification");
-			log.error("Exception Occurred createNotification :", e);
+			log.error("Exception Occurred createNotification :", e.getMessage());
 		}
 		return data;
 	}
@@ -129,7 +129,7 @@ public class NotificationController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception Occurred while getNotifications");
-			log.error("Exception Occurred while getNotifications", e);
+			log.error("Exception Occurred while getNotifications", e.getMessage());
 		}
 		return data;
 	}
@@ -172,7 +172,7 @@ public class NotificationController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception Occurred while getUserNotifications");
-			log.error("Exception Occurred while getUserNotifications", e);
+			log.error("Exception Occurred while getUserNotifications", e.getMessage());
 		}
 		return data;
 	}
@@ -210,7 +210,7 @@ public class NotificationController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception Occurred while addNotificationUser");
-			log.error("Exception Occurred while addNotificationUser", e);
+			log.error("Exception Occurred while addNotificationUser", e.getMessage());
 		}
 		return data;
 	}
@@ -248,7 +248,7 @@ public class NotificationController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception Occurred while dropNotificationUser");
-			log.error("Exception Occurred while dropNotificationUser", e);
+			log.error("Exception Occurred while dropNotificationUser", e.getMessage());
 		}
 		return data;
 	}
@@ -286,7 +286,7 @@ public class NotificationController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception Occurred while setNotificationUserViewed");
-			log.error("Exception Occurred while setNotificationUserViewed", e);
+			log.error("Exception Occurred while setNotificationUserViewed", e.getMessage());
 		}
 		return data;
 	}
@@ -321,7 +321,7 @@ public class NotificationController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception Occurred while deleteNotification");
-			log.error("Exception Occurred while deleteNotification", e);
+			log.error("Exception Occurred while deleteNotification", e.getMessage());
 		}
 		return data;
 	}
@@ -345,7 +345,7 @@ public class NotificationController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception Occurred while getNotificationCount");
-			log.error("Exception Occurred while getNotificationCount", e);
+			log.error("Exception Occurred while getNotificationCount", e.getMessage());
 		}
 		return data;
 	}
@@ -373,7 +373,7 @@ public class NotificationController extends AbstractController {
 	       } catch (Exception e) {
 	           data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 	           data.setResponseDetail("Exception Occurred while getUserNotificationPreferences");
-	           log.error("Exception Occurred while getUserNotificationPreferences", e);
+	           log.error("Exception Occurred while getUserNotificationPreferences", e.getMessage());
 	       }
 	       return data;
 	   }
@@ -405,7 +405,7 @@ public class NotificationController extends AbstractController {
 	       } catch (Exception e) {
 	           data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 	           data.setResponseDetail("Exception occured while createNotification");
-	           log.error("Exception Occurred createUserNotificationPreference :", e);
+	           log.error("Exception Occurred createUserNotificationPreference :", e.getMessage());
 	       }
 	       return data;
 	   }
@@ -431,7 +431,7 @@ public class NotificationController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception occured while updateUserNotificationPreference");
-			log.error("Exception Occurred updateUserNotificationPreference :", e);
+			log.error("Exception Occurred updateUserNotificationPreference :", e.getMessage());
 		}
 		return data;
 	}
@@ -451,7 +451,7 @@ public class NotificationController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception occured while sending user notification");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred sending user notification :", e);
+			log.error("Exception Occurred sending user notification :", e.getMessage());
 		}
 		return data;
 	}
@@ -477,7 +477,7 @@ public class NotificationController extends AbstractController {
         } catch (Exception e) {
             data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
             data.setResponseDetail("Exception Occurred while getUnreadNotificationCount");
-            log.error("Exception Occurred while getUnreadNotificationCount", e);
+            log.error("Exception Occurred while getUnreadNotificationCount", e.getMessage());
         }
         return data;
     }
@@ -507,7 +507,7 @@ public class NotificationController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception Occurred in getUserNotificationsPagination");
-			log.error("Exception Occurred in getUserNotificationsPagination", e);
+			log.error("Exception Occurred in getUserNotificationsPagination", e.getMessage());
 		}
 		return data;
 	}

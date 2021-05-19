@@ -133,12 +133,12 @@ public class PullAndPushSolutionServiceImpl extends AbstractServiceImpl implemen
 						log.debug(
 								"downloadModelArtifact.1 received stream for artifact {}", artifactId);
 					} catch (Exception e) {
-						log.error("downloadModelArtifact.1 inner failed", e);
+						log.error("downloadModelArtifact.1 inner failed", e.getMessage());
 					} finally {
 						try {
 							dockerClient.close();
 						} catch (IOException e) {
-							log.warn("downloadModelArtifact.1 failed to close docker client", e);
+							log.warn("downloadModelArtifact.1 failed to close docker client", e.getMessage());
 						}
 					}
 				} else {
@@ -153,7 +153,7 @@ public class PullAndPushSolutionServiceImpl extends AbstractServiceImpl implemen
 				}
 			}
 		} catch (Exception e) {
-			log.error("downloadModelArtifact.1 outer failed", e);
+			log.error("downloadModelArtifact.1 outer failed", e.getMessage());
 		}
 		return inputStream;
 	}
@@ -186,12 +186,12 @@ public class PullAndPushSolutionServiceImpl extends AbstractServiceImpl implemen
 								"downloadModelArtifact.2 directing docker stream to response for artifact {}", artifactId);
 						saveImageCommand.getDockerImageStream(response, buffer);
 					} catch (Exception e) {
-						log.error("downloadModelArtifact.2 inner failed", e);
+						log.error("downloadModelArtifact.2 inner failed", e.getMessage());
 					} finally {
 						try {
 							dockerClient.close();
 						} catch (IOException e) {
-							log.warn("downloadModelArtifact.2 failed to close docker client", e);
+							log.warn("downloadModelArtifact.2 failed to close docker client", e.getMessage());
 						}
 					}
 				} else {
@@ -207,7 +207,7 @@ public class PullAndPushSolutionServiceImpl extends AbstractServiceImpl implemen
 				}
 			}
 		} catch (Exception e) {
-			log.error("downloadModelArtifact.2 outer failed", e);
+			log.error("downloadModelArtifact.2 outer failed", e.getMessage());
 		}
 	}
 
@@ -263,7 +263,7 @@ public class PullAndPushSolutionServiceImpl extends AbstractServiceImpl implemen
 				}
 			}
 		} catch (Exception e) {
-			log.error("downloadModelDocument.2 outer failed", e);
+			log.error("downloadModelDocument.2 outer failed", e.getMessage());
 		}
 	}
 
@@ -293,27 +293,27 @@ public class PullAndPushSolutionServiceImpl extends AbstractServiceImpl implemen
 		try {
 			uploadedArtifact = nexusClient.uploadArtifact(groupId, PortalConstants.LICENSE_FILENAME_PREFIX, versionId, fileExtension, fileSize, file.getInputStream());
 		} catch (AuthenticationException e) {
-			log.error("AuthenticationException failed in uploadLicense", e);
+			log.error("AuthenticationException failed in uploadLicense", e.getMessage());
 			throw new AcumosServiceException(AcumosServiceException.ErrorCode.INVALID_TOKEN,
 					"AuthenticationException failed in uploadLicense");
 		} catch (AuthorizationException e) {
-			log.error("AuthorizationException failed in uploadLicense", e);
+			log.error("AuthorizationException failed in uploadLicense", e.getMessage());
 			throw new AcumosServiceException(AcumosServiceException.ErrorCode.INVALID_TOKEN,
 					"AuthorizationException failed in uploadLicense");
 		} catch (ConnectionException e) {
-			log.error("ConnectionException failed in uploadLicense", e);
+			log.error("ConnectionException failed in uploadLicense", e.getMessage());
 			throw new AcumosServiceException(AcumosServiceException.ErrorCode.INVALID_TOKEN,
 					"ConnectionException failed in uploadLicense");
 		} catch (TransferFailedException e) {
-			log.error("TransferFailedException failed in uploadLicense", e);
+			log.error("TransferFailedException failed in uploadLicense", e.getMessage());
 			throw new AcumosServiceException(AcumosServiceException.ErrorCode.INVALID_TOKEN,
 					"TransferFailedException failed in uploadLicense");
 		} catch (ResourceDoesNotExistException e) {
-			log.error("ResourceDoesNotExistException failed in uploadLicense", e);
+			log.error("ResourceDoesNotExistException failed in uploadLicense", e.getMessage());
 			throw new AcumosServiceException(AcumosServiceException.ErrorCode.INVALID_TOKEN,
 					"ResourceDoesNotExistException failed in uploadLicense");
 		} catch (IOException e) {
-			log.error("IOException failed in uploadLicense", e);
+			log.error("IOException failed in uploadLicense", e.getMessage());
 			throw new AcumosServiceException(AcumosServiceException.ErrorCode.INVALID_TOKEN,
 					"IOException failed in uploadLicense");
 		}

@@ -85,7 +85,7 @@ public class PublishRequestController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while fetching the request");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred Fetching Publish Request", e);
+			log.error("Exception Occurred Fetching Publish Request", e.getMessage());
 		}
 		return data;
 	}
@@ -109,7 +109,7 @@ public class PublishRequestController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while fetching the request");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred Fetching Publish Request", e);
+			log.error("Exception Occurred Fetching Publish Request", e.getMessage());
 		}
 		return data;
 	}
@@ -126,7 +126,7 @@ public class PublishRequestController extends AbstractController {
 			log.debug("getAllPublishRequest: size is {} ", mlPublishRequestList.getSize());
 		} catch (Exception e) {
 			mlPublishRequestList.setResponseDetail("Exception Occurred Fetching Publish Request");
-			log.error("Exception Occurred Fetching Publish Request", e);
+			log.error("Exception Occurred Fetching Publish Request", e.getMessage());
 		}
 		return mlPublishRequestList;
 	}
@@ -147,7 +147,7 @@ public class PublishRequestController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while fetching the request");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception occured while fetching the request :", e);
+			log.error("Exception occured while fetching the request :", e.getMessage());
 		}
 		return data;
 	}
@@ -184,13 +184,13 @@ public class PublishRequestController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Failed to publish the solution, please try again later");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception occurred while Updating the request : ", ase);
+			log.error("Exception occurred while Updating the request : ", ase.getMessage());
 		}
 		catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Failed to publish the solution, please try again later");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception occurred while Updating the request : ", e);
+			log.error("Exception occurred while Updating the request : ", e.getMessage());
 		}
 		return data;
 	}
@@ -210,7 +210,7 @@ public class PublishRequestController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while Updating the request");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception occured while Updating the request :", e);
+			log.error("Exception occured while Updating the request :", e.getMessage());
 		}
 		return data;
 	}

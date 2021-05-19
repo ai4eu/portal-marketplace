@@ -78,7 +78,7 @@ public class ThreadController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while createThread");
-			log.error("Exception Occurred createThread :", e);
+			log.error("Exception Occurred createThread :", e.getMessage());
 		}
 		return data;
 	}
@@ -97,7 +97,7 @@ public class ThreadController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while updateThread");
-			log.error("Exception Occurred updateThread :", e);
+			log.error("Exception Occurred updateThread :", e.getMessage());
 		}
 		return data;
 	}
@@ -116,7 +116,7 @@ public class ThreadController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while deleteThread");
-			log.error("Exception Occurred deleteThread :", e);
+			log.error("Exception Occurred deleteThread :", e.getMessage());
 		}
 		return data;
 	}
@@ -139,7 +139,7 @@ public class ThreadController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while getThread");
-			log.error("Exception Occurred getThread :", e);
+			log.error("Exception Occurred getThread :", e.getMessage());
 		}
 		return data;
 	}
@@ -159,7 +159,7 @@ public class ThreadController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while createComment");
-			log.error("Exception Occurred createComment :", e);
+			log.error("Exception Occurred createComment :", e.getMessage());
 		}
 		return data;
 	}
@@ -178,7 +178,7 @@ public class ThreadController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while updateComment");
-			log.error("Exception Occurred updateComment :", e);
+			log.error("Exception Occurred updateComment :", e.getMessage());
 		}
 		return data;
 	}
@@ -197,7 +197,7 @@ public class ThreadController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while deleteComment");
-			log.error("Exception Occurred deleteComment :", e);
+			log.error("Exception Occurred deleteComment :", e.getMessage());
 		}
 		return data;
 	}
@@ -221,7 +221,7 @@ public class ThreadController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while deleteComment");
-			log.error("Exception Occurred deleteComment :", e);
+			log.error("Exception Occurred deleteComment :", e.getMessage());
 		}
 		return data;
 	}
@@ -250,7 +250,7 @@ public class ThreadController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching thread", e);
+			log.error("Exception Occurred Fetching thread", e.getMessage());
 		}
 		return data;
 	}
@@ -283,7 +283,7 @@ public class ThreadController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching thread", e);
+			log.error("Exception Occurred Fetching thread", e.getMessage());
 		}
 		return data;
 	}
@@ -310,7 +310,7 @@ public class ThreadController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching thread", e);
+			log.error("Exception Occurred Fetching thread", e.getMessage());
 		}
 		
 		return data;
@@ -339,7 +339,7 @@ public class ThreadController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching threadCommentsCount", e);
+			log.error("Exception Occurred Fetching threadCommentsCount", e.getMessage());
 		}
 		
 		return data;
@@ -366,7 +366,7 @@ public class ThreadController extends AbstractController {
 			data.setStatus(false);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Fetching thread for solution and revision Id's");
-			log.error("Exception Occurred Fetching thread for solution and revision Id's", e);
+			log.error("Exception Occurred Fetching thread for solution and revision Id's", e.getMessage());
 		}
 		return data;
 	}
@@ -393,7 +393,7 @@ public class ThreadController extends AbstractController {
 			data.setStatus(false);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Fetching thread for solution and revision Id's");
-			log.error("Exception Occurred Fetching thread for solution and revision Id's", e);
+			log.error("Exception Occurred Fetching thread for solution and revision Id's", e.getMessage());
 		}
 		return data;
 	}
@@ -419,7 +419,7 @@ public class ThreadController extends AbstractController {
 			data.setStatus(false);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Fetching comments for solution and revision Id's");
-			log.error("Exception Occurred Fetching comments for solution and revision Id's", e);
+			log.error("Exception Occurred Fetching comments for solution and revision Id's", e.getMessage());
 		}
 		return data;
 	}

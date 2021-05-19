@@ -151,12 +151,12 @@ public class OauthUserServiceController extends AbstractController {
 		catch (UserServiceException e) {
 			responseVO = new ResponseVO(HttpServletResponse.SC_BAD_REQUEST, "Failed");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred while createUser()", e);
+			log.error("Exception Occurred while createUser()", e.getMessage());
 		}
 		catch (Exception e) {
 			responseVO = new ResponseVO(HttpServletResponse.SC_BAD_REQUEST, "Failed");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred while createUser()", e);
+			log.error("Exception Occurred while createUser()", e.getMessage());
 		}
 		return responseVO;
 	}
@@ -256,7 +256,7 @@ public class OauthUserServiceController extends AbstractController {
 			} catch (Exception e) {
 				responseObject = new ResponseVO(HttpServletResponse.SC_UNAUTHORIZED, "Login Failed");
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-				log.error("Exception Occurred while login()", e);
+				log.error("Exception Occurred while login()", e.getMessage());
 			}
 		}
 		responseObject.setUserAssignedRolesList(userAssignedRolesList);
@@ -295,7 +295,7 @@ public class OauthUserServiceController extends AbstractController {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			}
 		} catch (Exception e) {
-			log.error("Exception occurred during getUsernameFromAuth", e);
+			log.error("Exception occurred during getUsernameFromAuth", e.getMessage());
 			response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 		}
 	}

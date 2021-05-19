@@ -147,7 +147,7 @@ public class LicensingServiceImpl extends AbstractServiceImpl implements Licensi
 			return isLicenseAssetRegisterd = false;
 		}		
 		catch(Exception e) {
-			log.error("Exception in registering license : "+e);
+			log.error("Exception in registering license : "+e.getMessage());
 			return isLicenseAssetRegisterd = false;
 		}
 		log.debug("Exit from register() ...");

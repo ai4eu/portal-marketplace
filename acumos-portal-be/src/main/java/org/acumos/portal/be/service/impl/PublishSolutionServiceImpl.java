@@ -118,7 +118,7 @@ public class PublishSolutionServiceImpl extends AbstractServiceImpl implements P
 		}		
 		catch (Exception e) {
 			publishStatus = "Failed to publish the solution, please try again later";
-			log.error("Exception Occurred while Publishing Solution ={}", e);
+			log.error("Exception Occurred while Publishing Solution ={}", e.getMessage());
 		}
 		return publishStatus;
 	}
@@ -172,7 +172,7 @@ public class PublishSolutionServiceImpl extends AbstractServiceImpl implements P
 			
 		} catch (Exception e) {
 			unpublishedStatus = "Failed to Unpublish the solution";
-			log.error("Exception Occurred while UnPublishing Solution ={}", e);
+			log.error("Exception Occurred while UnPublishing Solution ={}", e.getMessage());
 		}
 		
 		return unpublishedStatus;

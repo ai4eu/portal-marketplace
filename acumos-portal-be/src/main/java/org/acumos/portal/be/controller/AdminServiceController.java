@@ -144,7 +144,7 @@ public class AdminServiceController extends AbstractController {
             
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Exception Occurred Fetching Peers for Admin Configuration");
-            log.error( "Exception Occurred Fetching Peers for Admin Configuration", e);
+            log.error( "Exception Occurred Fetching Peers for Admin Configuration", e.getMessage());
         }
         return data;
     }
@@ -170,7 +170,7 @@ public class AdminServiceController extends AbstractController {
         } catch (Exception e) {            
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Exception Occurred Fetching Peer for Admin Configuration");
-            log.error( "Exception Occurred Fetching Peer for Admin Configuration", e);
+            log.error( "Exception Occurred Fetching Peer for Admin Configuration", e.getMessage());
         }
         return data;
     }
@@ -216,7 +216,7 @@ public class AdminServiceController extends AbstractController {
         catch (Exception e) {
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Failed");
-            log.error( "Exception Occurred while createPeer()", e);
+            log.error( "Exception Occurred while createPeer()", e.getMessage());
         }
         return data;
     }
@@ -243,7 +243,7 @@ public class AdminServiceController extends AbstractController {
         }catch(Exception e) {
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Failed");
-            log.error( "Exception Occurred while updatePeer()", e);
+            log.error( "Exception Occurred while updatePeer()", e.getMessage());
         }
         return data;
     }
@@ -274,7 +274,7 @@ public class AdminServiceController extends AbstractController {
         }catch(Exception e) {
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Failed");
-            log.error( "Exception Occurred while removePeer()", e);
+            log.error( "Exception Occurred while removePeer()", e.getMessage());
         }
         return data;
     }
@@ -303,7 +303,7 @@ public class AdminServiceController extends AbstractController {
 
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Fetching PeerSubscription for Admin Configuration");
-			log.error("Exception Occurred Fetching PeerSubscription for Admin Configuration", e);
+			log.error("Exception Occurred Fetching PeerSubscription for Admin Configuration", e.getMessage());
 		}
 		return data;
 	}
@@ -340,7 +340,7 @@ public class AdminServiceController extends AbstractController {
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Exception Occurred Fetching PeerSubscriptionCounts for Admin Configuration");
             log.error(
-                    "Exception Occurred Fetching PeerSubscriptionCounts for Admin Configuration", e);
+                    "Exception Occurred Fetching PeerSubscriptionCounts for Admin Configuration", e.getMessage());
         }
         return data;
     }
@@ -368,7 +368,7 @@ public class AdminServiceController extends AbstractController {
             
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Exception Occurred Fetching mlpSubscription for Admin Configuration");
-            log.error( "Exception Occurred Fetching mlpSubscription for Admin Configuration", e);
+            log.error( "Exception Occurred Fetching mlpSubscription for Admin Configuration", e.getMessage());
         }
         return data;
     }
@@ -396,7 +396,7 @@ public class AdminServiceController extends AbstractController {
         } catch (Exception e) {
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Failed");
-            log.error( "Exception Occurred while createPeerSubscription()", e);
+            log.error( "Exception Occurred while createPeerSubscription()", e.getMessage());
         }
         return data;
     }
@@ -422,7 +422,7 @@ public class AdminServiceController extends AbstractController {
         }catch(Exception e) {
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Failed");
-            log.error( "Exception Occurred while updatePeerSubscription()", e);
+            log.error( "Exception Occurred while updatePeerSubscription()", e.getMessage());
         }
         return data;
     }
@@ -448,7 +448,7 @@ public class AdminServiceController extends AbstractController {
         }catch(Exception e) {
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Failed");
-            log.error( "Exception Occurred while deletePeerSubscription()", e);
+            log.error( "Exception Occurred while deletePeerSubscription()", e.getMessage());
         }
         return data;
     }
@@ -563,7 +563,7 @@ public class AdminServiceController extends AbstractController {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Exception occured while createSiteConfig");
-            log.error( "Exception Occurred createSiteConfig :", e);
+            log.error( "Exception Occurred createSiteConfig :", e.getMessage());
         }
         return data;
     }
@@ -594,7 +594,7 @@ public class AdminServiceController extends AbstractController {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Exception occured while updateSiteConfig");
-            log.error( "Exception Occurred updateSiteConfig :", e);
+            log.error( "Exception Occurred updateSiteConfig :", e.getMessage());
         }
         return data;
     }
@@ -621,7 +621,7 @@ public class AdminServiceController extends AbstractController {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             data.setErrorCode(JSONTags.TAG_ERROR_RESPONSE);
             data.setResponseDetail("Failed while deleting site config");
-            log.error( "Exception Occurred while deleteSiteConfig()", e);
+            log.error( "Exception Occurred while deleteSiteConfig()", e.getMessage());
         }
         return data;
     }
@@ -704,7 +704,7 @@ public class AdminServiceController extends AbstractController {
         }catch(Exception e) {
             data.setErrorCode(JSONTags.TAG_ERROR_CODE);
             data.setResponseDetail("Failed");
-            log.error( "Exception Occurred while updaterequest()", e);
+            log.error( "Exception Occurred while updaterequest()", e.getMessage());
         }
         return data;
     }
@@ -774,7 +774,7 @@ public class AdminServiceController extends AbstractController {
 			e.printStackTrace();
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Failed");
-			log.error("Exception Occurred while createPeerSubscription()", e);
+			log.error("Exception Occurred while createPeerSubscription()", e.getMessage());
 		}
 		return data;
 	}
@@ -848,7 +848,7 @@ public class AdminServiceController extends AbstractController {
 			e.printStackTrace();
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Error occured while creating role");
-			log.error( "Exception Occurred while creating role :", e);
+			log.error( "Exception Occurred while creating role :", e.getMessage());
 		}
 		return data;
 	}
@@ -886,7 +886,7 @@ public class AdminServiceController extends AbstractController {
 			}
 		} catch (MailException ex) {
 			log.error(
-					"sendCredentialsmail: failed to send mail to user " + mlpUser.getEmailId(), ex);
+					"sendCredentialsmail: failed to send mail to user " + mlpUser.getEmailId(), ex.getMessage());
 		}
 	}
 
@@ -911,12 +911,12 @@ public class AdminServiceController extends AbstractController {
                 e.printStackTrace();
                 responseVO.setErrorCode(JSONTags.TAG_ERROR_CODE);
                 responseVO.setResponseDetail("Exception Occurred while parsing json or reading file");
-                log.error("Exception Occurred while parsing json or reading file", e);
+                log.error("Exception Occurred while parsing json or reading file", e.getMessage());
 
           } catch (Exception e) {
                 responseVO.setErrorCode(JSONTags.TAG_ERROR_CODE);
                 responseVO.setResponseDetail("Exception Occurred while parsing json or reading file");
-                log.error("Exception Occurred in getDynamicMenu()", e);
+                log.error("Exception Occurred in getDynamicMenu()", e.getMessage());
           }
 
           responseVO.setResponseBody(menuList);
@@ -950,12 +950,12 @@ public class AdminServiceController extends AbstractController {
 			e.printStackTrace();
 			responseVO.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			responseVO.setResponseDetail("Exception Occurred while parsing json or reading file");
-			log.error("Exception Occurred while parsing json or reading file", e);
+			log.error("Exception Occurred while parsing json or reading file", e.getMessage());
 
 		} catch (Exception e) {
 			responseVO.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			responseVO.setResponseDetail("Exception Occurred while parsing json or reading file");
-			log.error("Exception Occurred in getDesignStudioMenu()", e);
+			log.error("Exception Occurred in getDesignStudioMenu()", e.getMessage());
 		}
 
 		return responseVO;

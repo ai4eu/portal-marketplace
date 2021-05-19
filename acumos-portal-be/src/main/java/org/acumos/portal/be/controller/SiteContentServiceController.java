@@ -77,7 +77,7 @@ public class SiteContentServiceController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Fetching Terms and Conditions");
-			log.error("Exception Occurred Fetching Terms and Conditions", e);
+			log.error("Exception Occurred Fetching Terms and Conditions", e.getMessage());
 		}
 		return data;
 	}
@@ -99,7 +99,7 @@ public class SiteContentServiceController extends AbstractController {
 			} catch (Exception e) {
 				data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 				data.setResponseDetail("Exception Occurred Updating Terms and Conditions");
-				log.error("Exception Occurred Updating Terms and Conditions", e);
+				log.error("Exception Occurred Updating Terms and Conditions", e.getMessage());
 			}
 		}
 		return data;
@@ -123,7 +123,7 @@ public class SiteContentServiceController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Fetching Onboarding Overview");
-			log.error("Exception Occurred Fetching Onboarding Overview", e);
+			log.error("Exception Occurred Fetching Onboarding Overview", e.getMessage());
 		}
 		return data;
 	}
@@ -145,7 +145,7 @@ public class SiteContentServiceController extends AbstractController {
 			} catch (Exception e) {
 				data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 				data.setResponseDetail("Exception Occurred Updating Onboarding Overview");
-				log.error("Exception Occurred Updating Onboarding Overview", e);
+				log.error("Exception Occurred Updating Onboarding Overview", e.getMessage());
 			}
 		}
 		return data;
@@ -176,7 +176,7 @@ public class SiteContentServiceController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Fetching Contact Info");
-			log.error("Exception Occurred Fetching Contact Info", e);
+			log.error("Exception Occurred Fetching Contact Info", e.getMessage());
 		}
 		return data;
 	}
@@ -197,7 +197,7 @@ public class SiteContentServiceController extends AbstractController {
 			} catch (Exception e) {
 				data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 				data.setResponseDetail("Exception Occurred Updating Contact Info");
-				log.error("Exception Occurred Updating Contact Info", e);
+				log.error("Exception Occurred Updating Contact Info", e.getMessage());
 			}
 		}
 		return data;
@@ -221,7 +221,7 @@ public class SiteContentServiceController extends AbstractController {
 			}
 		} catch (Exception e) {
 			resp = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-			log.error("Exception Occurred Fetching Cobrand Logo", e);
+			log.error("Exception Occurred Fetching Cobrand Logo", e.getMessage());
 		}
 		return resp;
 	}
@@ -242,7 +242,7 @@ public class SiteContentServiceController extends AbstractController {
 			} catch (Exception e) {
 				data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 				data.setResponseDetail("Exception Occurred Updating Cobrand Logo");
-				log.error("Exception Occurred Updating Cobrand Logo", e);
+				log.error("Exception Occurred Updating Cobrand Logo", e.getMessage());
 			}
 		}
 		return data;
@@ -263,7 +263,7 @@ public class SiteContentServiceController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Deleting Cobrand Logo");
-			log.error("Exception Occurred Deleting Cobrand Logo", e);
+			log.error("Exception Occurred Deleting Cobrand Logo", e.getMessage());
 		}
 		return data;
 	}
@@ -286,7 +286,7 @@ public class SiteContentServiceController extends AbstractController {
 			}
 		} catch (Exception e) {
 			resp = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-			log.error("Exception Occurred Fetching Carousel Picture", e);
+			log.error("Exception Occurred Fetching Carousel Picture", e.getMessage());
 		}
 		return resp;
 	}
@@ -308,7 +308,7 @@ public class SiteContentServiceController extends AbstractController {
 			} catch (Exception e) {
 				data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 				data.setResponseDetail("Exception Occurred Updating Carousel Picture");
-				log.error("Exception Occurred Updating Carousel Picture", e);
+				log.error("Exception Occurred Updating Carousel Picture", e.getMessage());
 			}
 		}
 		return data;
@@ -329,7 +329,7 @@ public class SiteContentServiceController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Deleting Carousel Picture");
-			log.error("Exception Occurred Deleting Carousel Picture", e);
+			log.error("Exception Occurred Deleting Carousel Picture", e.getMessage());
 		}
 		return data;
 	}

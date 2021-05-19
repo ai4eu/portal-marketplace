@@ -168,7 +168,7 @@ public class NotificationServiceImpl extends AbstractServiceImpl implements Noti
 						"Notification message can not be null: generateNotification()");
 			}
 		} catch (Exception e) {
-			log.error( "Exception Occurred while getNotifications", e);
+			log.error( "Exception Occurred while getNotifications", e.getMessage());
 		}
 	}
 	
@@ -268,7 +268,7 @@ public class NotificationServiceImpl extends AbstractServiceImpl implements Noti
 						}
 					} catch (MailException ex) {
 						log.error(
-								"sendUserNotification: failed to send mail to user " + user.getEmail(), ex);
+								"sendUserNotification: failed to send mail to user " + user.getEmail(), ex.getMessage());
 					}
 					
 				} else {

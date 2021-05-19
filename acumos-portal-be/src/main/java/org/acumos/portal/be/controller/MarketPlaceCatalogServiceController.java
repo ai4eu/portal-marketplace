@@ -181,7 +181,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
 			response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-			log.error("Exception Occurred Fetching Solutions Detail for solutionId :" + "solutionId", e);
+			log.error("Exception Occurred Fetching Solutions Detail for solutionId :" + "solutionId", e.getMessage());
 		}
 		return data;
 	}
@@ -207,7 +207,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching Solutions for Market Place Catalog", e);
+			log.error("Exception Occurred Fetching Solutions for Market Place Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -239,7 +239,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching Solutions for Market Place Catalog", e);
+			log.error("Exception Occurred Fetching Solutions for Market Place Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -282,7 +282,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred while updateSolutionDetails()", e);
+			log.error("Exception Occurred while updateSolutionDetails()", e.getMessage());
 		}
 		return data;
 	}
@@ -328,12 +328,12 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail("Unable to delete model image due to no image found on Nexus");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("AcumosServiceException Occurred while deleteSolutionArtifacts()", e);
+			log.error("AcumosServiceException Occurred while deleteSolutionArtifacts()", e.getMessage());
 		} catch (URISyntaxException uriEx) {
 			data.setErrorCode("401");
 			data.setResponseDetail("Unable to delete  Artifact from Nexus");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("URISyntaxException Occurred while deleteSolutionArtifacts()", uriEx);
+			log.error("URISyntaxException Occurred while deleteSolutionArtifacts()", uriEx.getMessage());
 		}
 		return data;
 	}
@@ -373,7 +373,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			data.setResponseDetail(e.getMessage());
 			data.setStatus(false);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred Fetching Solution Revisions for Market Place Catalog", e);
+			log.error("Exception Occurred Fetching Solution Revisions for Market Place Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -455,7 +455,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			data.setStatus(false);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			log.error("Exception Occurred Fetching Solution Revisions Artifacts for Market Place Catalog",
-					e);
+					e.getMessage());
 		}
 		return data;
 	}
@@ -485,7 +485,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred while addSolutionTag()", e);
+			log.error("Exception Occurred while addSolutionTag()", e.getMessage());
 		}
 		return data;
 	}
@@ -516,7 +516,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred while dropSolutionTag()", e);
+			log.error("Exception Occurred while dropSolutionTag()", e.getMessage());
 		}
 		return data;
 	}
@@ -552,7 +552,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching tags for Market Place Catalog", e);
+			log.error("Exception Occurred Fetching tags for Market Place Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -590,7 +590,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching Preferred tags for Market Place Catalog", e);
+			log.error("Exception Occurred Fetching Preferred tags for Market Place Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -615,7 +615,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while createUserTag");
-			log.error("Exception Occurred createUserTag :", e);
+			log.error("Exception Occurred createUserTag :", e.getMessage());
 		}
 		return data;
 	}
@@ -643,7 +643,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching Solutions for a User for Manage My Models", e);
+			log.error("Exception Occurred Fetching Solutions for a User for Manage My Models", e.getMessage());
 		}
 		return data;
 	}
@@ -684,7 +684,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching Solutions Detail for solutionId :" + "solutionId", e);
+			log.error("Exception Occurred Fetching Solutions Detail for solutionId :" + "solutionId", e.getMessage());
 		}
 		return data;
 	}
@@ -751,7 +751,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while addSolutionUserAccess() :" + "solutionId", e);
+			log.error("Exception Occurred while addSolutionUserAccess() :" + "solutionId", e.getMessage());
 		}
 		return data;
 	}
@@ -794,7 +794,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while dropSolutionUserAccess() :" + "solutionId", e);
+			log.error("Exception Occurred while dropSolutionUserAccess() :" + "solutionId", e.getMessage());
 		}
 		return data;
 	}
@@ -831,7 +831,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred incrementSolutionViewCount :" + "solutionId", e);
+			log.error("Exception Occurred incrementSolutionViewCount :" + "solutionId", e.getMessage());
 		}
 		return data;
 	}
@@ -862,7 +862,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred createSolutionRating :", e);
+			log.error("Exception Occurred createSolutionRating :", e.getMessage());
 		}
 		return data;
 	}
@@ -893,7 +893,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred updateSolutionRating :", e);
+			log.error("Exception Occurred updateSolutionRating :", e.getMessage());
 		}
 		return data;
 	}
@@ -931,7 +931,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception occured while fetching models shared with userId :" + userId, e);
+			log.error("Exception occured while fetching models shared with userId :" + userId, e.getMessage());
 		}
 		return data;
 	}
@@ -963,7 +963,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred createSolutionFavorite :", e);
+			log.error("Exception Occurred createSolutionFavorite :", e.getMessage());
 		}
 		return data;
 	}
@@ -995,7 +995,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred deleteSolutionFavorite :", e);
+			log.error("Exception Occurred deleteSolutionFavorite :", e.getMessage());
 		}
 		return data;
 	}
@@ -1028,7 +1028,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while getFavoriteSolutions", e);
+			log.error("Exception Occurred while getFavoriteSolutions", e.getMessage());
 		}
 		return data;
 	}
@@ -1051,7 +1051,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 				log.debug("getRelatedMySolutions: size is {} ", mlSolutions.getSize());
 			}
 		} catch (AcumosServiceException e) {
-			log.error("Exception Occurred while getRelatedMySolutions", e);
+			log.error("Exception Occurred while getRelatedMySolutions", e.getMessage());
 			data.setErrorCode(e.getErrorCode());
 			data.setResponseDetail(e.getMessage());
 		}
@@ -1091,7 +1091,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			}
 		} catch (AcumosServiceException e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred reading a artifact for a Solution in Market Place serive", e);
+			log.error("Exception Occurred reading a artifact for a Solution in Market Place serive", e.getMessage());
 		}
 		return outputString;
 	}
@@ -1133,7 +1133,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Fetching Ratings for Solutions");
-			log.error("Exception Occurred Fetching Ratings for Solutions", e);
+			log.error("Exception Occurred Fetching Ratings for Solutions", e.getMessage());
 		}
 		return data;
 	}
@@ -1154,7 +1154,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (AcumosServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while createTag");
-			log.error("Exception Occurred createTag :", e);
+			log.error("Exception Occurred createTag :", e.getMessage());
 		}
 		return data;
 	}
@@ -1184,7 +1184,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Fetching Ratings for Solutions");
-			log.error("Exception Occurred Fetching Ratings for Solutions", e);
+			log.error("Exception Occurred Fetching Ratings for Solutions", e.getMessage());
 		}
 		return data;
 	}
@@ -1219,7 +1219,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching Solutions", e);
+			log.error("Exception Occurred Fetching Solutions", e.getMessage());
 		}
 		return data;
 	}
@@ -1259,7 +1259,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching Solutions", e);
+			log.error("Exception Occurred Fetching Solutions", e.getMessage());
 		}
 		return data;
 	}
@@ -1287,7 +1287,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred Fetching Solutions", e);
+			log.error("Exception Occurred Fetching Solutions", e.getMessage());
 		}
 		return data;
 	}
@@ -1313,7 +1313,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred Fetching Solutions", e);
+			log.error("Exception Occurred Fetching Solutions", e.getMessage());
 		}
 		return data;
 	}
@@ -1371,7 +1371,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred while getAvgRatingsForSol");
-			log.error("Exception Occurred while getAvgRatingsForSol", e);
+			log.error("Exception Occurred while getAvgRatingsForSol", e.getMessage());
 		}
 		return data;
 	}
@@ -1399,7 +1399,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			result = marketPlaceService.getProtoUrl(solutionId, version, "MI", "proto");
 
 		} catch (Exception e) {
-			log.error("Exception in fetchProtoFile() ", e);
+			log.error("Exception in fetchProtoFile() ", e.getMessage());
 		}
 		log.debug("fetchProtoFile() : End");
 
@@ -1429,7 +1429,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			result = marketPlaceService.getLicenseUrl(solutionId, version, "LI", "license");
 
 		} catch (Exception e) {
-			log.error("Exception in fetchLicenseFile() ", e);
+			log.error("Exception in fetchLicenseFile() ", e.getMessage());
 		}
 		log.debug("fetchLicenseFile() : End");
 
@@ -1475,7 +1475,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred while fetching Authors");
-			log.error("Exception Occurred while fetching Authors", e);
+			log.error("Exception Occurred while fetching Authors", e.getMessage());
 		}
 		return data;
 	}
@@ -1504,12 +1504,12 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while addAuthors", e);
+			log.error("Exception Occurred while addAuthors", e.getMessage());
 		} catch (Exception e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while addAuthors", e);
+			log.error("Exception Occurred while addAuthors", e.getMessage());
 		}
 		return data;
 	}
@@ -1538,7 +1538,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while removeAuthor", e);
+			log.error("Exception Occurred while removeAuthor", e.getMessage());
 		}
 		return data;
 	}
@@ -1565,12 +1565,12 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while getPublisher", e);
+			log.error("Exception Occurred while getPublisher", e.getMessage());
 		} catch (Exception e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while getPublisher", e);
+			log.error("Exception Occurred while getPublisher", e.getMessage());
 		}
 		return data;
 	}
@@ -1597,12 +1597,12 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while addPublisher", e);
+			log.error("Exception Occurred while addPublisher", e.getMessage());
 		} catch (Exception e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while addPublisher", e);
+			log.error("Exception Occurred while addPublisher", e.getMessage());
 		}
 		return data;
 	}
@@ -1654,7 +1654,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while adding Document", e);
+			log.error("Exception Occurred while adding Document", e.getMessage());
 		}
 		return data;
 	});
@@ -1688,7 +1688,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while removing Document", e);
+			log.error("Exception Occurred while removing Document", e.getMessage());
 		}
 		return data;
 	}
@@ -1719,7 +1719,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while fetching Documents", e);
+			log.error("Exception Occurred while fetching Documents", e.getMessage());
 		}
 		return data;
 	}
@@ -1753,7 +1753,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while fetching Documents", e);
+			log.error("Exception Occurred while fetching Documents", e.getMessage());
 		}
 		return data;
 	}
@@ -1782,7 +1782,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while fetching Description", e);
+			log.error("Exception Occurred while fetching Description", e.getMessage());
 		}
 		return data;
 	}
@@ -1828,7 +1828,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while fetching Description", e);
+			log.error("Exception Occurred while fetching Description", e.getMessage());
 		}
 		return data;
 	}
@@ -1869,7 +1869,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			}
 		} catch (Exception e) {
 			responseVO = ResponseEntity.badRequest().build();
-			log.error("Exception Occurred while getSolutionImage()", e);
+			log.error("Exception Occurred while getSolutionImage()", e.getMessage());
 		}
 		return responseVO;
 	}
@@ -1901,7 +1901,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail("Failed");
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred while updateSolutionImage()", e);
+			log.error("Exception Occurred while updateSolutionImage()", e.getMessage());
 		}
 		return responseVO;
 	}
@@ -1937,7 +1937,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 			try {
 				rtu = rtuFuture.get();
 			} catch (InterruptedException | ExecutionException e) {
-				log.error("system error during rtu check", e);
+				log.error("system error during rtu check", e.getMessage());
 			}
 			VerifySolutionActionResponse rtuVerifcation = handleRtuCheckResponse(rtu, data);
 			// rtu is allowed check for sv scan now
@@ -1946,7 +1946,7 @@ public class MarketPlaceCatalogServiceController extends AbstractController {
 				try {
 					workflow = workflowFuture.get();
 				} catch (InterruptedException | ExecutionException e) {
-					log.error("system error during SV scan check", e);
+					log.error("system error during SV scan check", e.getMessage());
 				}
 
 				handleSvResponse(response, data, workflow);

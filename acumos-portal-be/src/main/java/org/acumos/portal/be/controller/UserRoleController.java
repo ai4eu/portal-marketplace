@@ -104,11 +104,11 @@ public class UserRoleController extends AbstractController {
 		} catch (UserServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			data.setResponseDetail("Error Occurred while getRolesList()");
-			log.error("Error Occurred while getRolesList()", e);
+			log.error("Error Occurred while getRolesList()", e.getMessage());
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception Occurred Fetching roles for Market Place user");
-			log.error("Exception Occurred while getRolesList()", e);
+			log.error("Exception Occurred while getRolesList()", e.getMessage());
 		}
 		return data;
 	}
@@ -152,11 +152,11 @@ public class UserRoleController extends AbstractController {
 		}catch (UserServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while fetching role details");
-			log.error("Exception Occurred Fetching role Detail for roleId :" + roleId ,e);
+			log.error("Exception Occurred Fetching role Detail for roleId :" + roleId, e.getMessage());
 		}catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception occured while fetching role details");
-			log.error("Exception Occurred Fetching role Detail for roleId :" + roleId ,e);
+			log.error("Exception Occurred Fetching role Detail for roleId :" + roleId, e.getMessage());
 		}
 		return data;
 	}
@@ -206,11 +206,11 @@ public class UserRoleController extends AbstractController {
 		} catch (UserServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			data.setResponseDetail("Exception Occurred while creating role");
-			log.error("Error Occurred while getRoleDetails() :", e);
+			log.error("Error Occurred while getRoleDetails() :", e.getMessage());
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Error occured while creating role");
-			log.error("Exception Occurred while creating role :", e);
+			log.error("Exception Occurred while creating role :", e.getMessage());
 		}
 		return data;
 	}
@@ -245,11 +245,11 @@ public class UserRoleController extends AbstractController {
 		} catch (UserServiceException e) {
 			response.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			response.setResponseDetail("Exception Occurred while updateRole()");
-			log.error("Error Occurred while updateRole() :", e);
+			log.error("Error Occurred while updateRole() :", e.getMessage());
 		} catch (Exception e) {
 			response.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			response.setResponseDetail("Exception Occurred while updateRole()");
-			log.error("Exception Occurred while updateRole() :", e);
+			log.error("Exception Occurred while updateRole() :", e.getMessage());
 		}
 		return response;
 	}
@@ -286,15 +286,15 @@ public class UserRoleController extends AbstractController {
 		}catch (AcumosServiceException ae) {
 			response.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			response.setResponseDetail(ae.getMessage());
-			log.error("Error Occurred while deleteRole() :", ae);
+			log.error("Error Occurred while deleteRole() :", ae.getMessage());
 		}catch (UserServiceException e) {
 			response.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			response.setResponseDetail("Exception Occurred while deleteRole()");
-			log.error("Error Occurred while deleteRole() :", e);
+			log.error("Error Occurred while deleteRole() :", e.getMessage());
 		} catch (Exception e) {
 			response.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			response.setResponseDetail("Exception Occurred while deleteRole()");
-			log.error("Exception Occurred while deleteRole() :", e);
+			log.error("Exception Occurred while deleteRole() :", e.getMessage());
 		}
 		return response;
 	}
@@ -327,11 +327,11 @@ public class UserRoleController extends AbstractController {
 		} catch (UserServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			data.setResponseDetail("Error Occurred while getRoleFunction()");
-			log.error("Error Occurred while getRoleFunction() :", e);
+			log.error("Error Occurred while getRoleFunction() :", e.getMessage());
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Error occured while getRoleFunction()");
-			log.error("Exception Occurred while getRoleFunction()", e);
+			log.error("Exception Occurred while getRoleFunction()", e.getMessage());
 		}
 		return data;
 	}
@@ -358,11 +358,11 @@ public class UserRoleController extends AbstractController {
 		} catch (UserServiceException e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			data.setResponseDetail("Exception Occurred while creating role");
-			log.error("Error Occurred while createRoleFunction() :", e);
+			log.error("Error Occurred while createRoleFunction() :", e.getMessage());
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Error occured while creating roles");
-			log.error("Exception Occurred while createRoleFunction() :", e);
+			log.error("Exception Occurred while createRoleFunction() :", e.getMessage());
 		}
 		return data;
 	}
@@ -387,11 +387,11 @@ public class UserRoleController extends AbstractController {
 		} catch (UserServiceException e) {
 			response.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			response.setResponseDetail("Exception Occurred while updateRoleFunction()");
-			log.error("Error Occurred while updateRoleFunction() :", e);
+			log.error("Error Occurred while updateRoleFunction() :", e.getMessage());
 		} catch (Exception e) {
 			response.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			response.setResponseDetail("Exception Occurred while updateRoleFunction()");
-			log.error("Exception Occurred while updateRoleFunction :", e);
+			log.error("Exception Occurred while updateRoleFunction :", e.getMessage());
 		}
 		return response;
 	}
@@ -423,11 +423,11 @@ public class UserRoleController extends AbstractController {
 		} catch (UserServiceException e) {
 			response.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			response.setResponseDetail("Exception Occurred while deleteRoleFunction()");
-			log.error("Error Occurred while deleteRoleFunction() :", e);
+			log.error("Error Occurred while deleteRoleFunction() :", e.getMessage());
 		} catch (Exception e) {
 			response.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			response.setResponseDetail("Exception Occurred while deleteRoleFunction()");
-			log.error("Exception Occurred while deleteRoleFunction() :", e);
+			log.error("Exception Occurred while deleteRoleFunction() :", e.getMessage());
 		}
 		return response;
 	}
@@ -448,7 +448,7 @@ public class UserRoleController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Error occured while creating role");
-			log.error("Exception Occurred while creating role :", e);
+			log.error("Exception Occurred while creating role :", e.getMessage());
 		}
 		return data;
 	}
@@ -474,7 +474,7 @@ public class UserRoleController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception Occurred Fetching roles for Market Place user");
-			log.error("Exception Occurred while getRolesList()", e);
+			log.error("Exception Occurred while getRolesList()", e.getMessage());
 		}
 		return data;
 	}
@@ -524,7 +524,7 @@ public class UserRoleController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Error occured while updating role");
-			log.error("Exception Occurred while updating role :", e);
+			log.error("Exception Occurred while updating role :", e.getMessage());
 		}
 		return data;
 	}
@@ -548,7 +548,7 @@ public class UserRoleController extends AbstractController {
 			e.printStackTrace();
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Error occured while getRoleUsersCount");
-			log.error("Exception Occurred while getRoleUsersCount :", e);
+			log.error("Exception Occurred while getRoleUsersCount :", e.getMessage());
 		}
 		return data;
 	}

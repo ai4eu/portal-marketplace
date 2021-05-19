@@ -161,7 +161,7 @@ public class AuthServiceController extends AbstractController {
 			} catch (Exception e) {
 				responseObject = new ResponseVO(HttpServletResponse.SC_UNAUTHORIZED, "Login Failed");
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-				log.error( "Exception Occurred while login()", e);
+				log.error( "Exception Occurred while login()", e.getMessage());
 			}
 		}
 
@@ -219,12 +219,12 @@ public class AuthServiceController extends AbstractController {
 						userAssignedRolesList = userService.getUserRole(mlpUser.getUserId());
 						isValid = true;
 					} catch(HttpStatusCodeException exc) {
-						log.error( exc.getResponseBodyAsString(), exc);
+						log.error( exc.getResponseBodyAsString(), exc.getMessage());
 
 						ObjectMapper mapper = new ObjectMapper();
 						Map<String, Object> errResp = mapper.readValue(exc.getResponseBodyAsString(), Map.class);
 						String errorMsg = (String) errResp.get("error");
-						log.error( errorMsg, exc);
+						log.error( errorMsg, exc.getMessage());
 
 						responseObject = new ResponseVO(HttpServletResponse.SC_BAD_GATEWAY, errorMsg);
 						response.setStatus(HttpServletResponse.SC_BAD_GATEWAY);
@@ -233,7 +233,7 @@ public class AuthServiceController extends AbstractController {
 						responseObject = new ResponseVO(HttpServletResponse.SC_BAD_GATEWAY,
 								"Login  Failed. Invalid Password.");
 						response.setStatus(HttpServletResponse.SC_BAD_GATEWAY);
-						log.error( "Exception Occurred while login()", e);
+						log.error( "Exception Occurred while login()", e.getMessage());
 					}
 				} else 
 					if (!PortalUtils.isEmptyOrNullString(user.getBody().getEmailId()) && !PortalUtils.isEmptyOrNullString(provider) && "LFCAS".equals(provider)) {
@@ -361,7 +361,7 @@ public class AuthServiceController extends AbstractController {
 				if (response.getStatus() == HttpServletResponse.SC_BAD_GATEWAY) {
 					responseObject = new ResponseVO(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
 					response.setStatus(HttpServletResponse.SC_BAD_GATEWAY);
-					log.error( "Exception Occurred while login()", e);
+					log.error( "Exception Occurred while login()", e.getMessage());
 				}
 			}
 		}

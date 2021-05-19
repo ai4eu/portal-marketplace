@@ -98,7 +98,7 @@ public class MailJetService implements MailJet {
 			response = client.post(request);
 			log.debug("sendMail: client response: " + response.getData().toString());
 		} catch (MailjetException | MailjetSocketTimeoutException e) {
-			log.error("sendMail: failed to post email with subject " + mailData.getSubject(), e);
+			log.error("sendMail: failed to post email with subject " + mailData.getSubject(), e.getMessage());
 			return;
 		}
 	}
@@ -110,7 +110,7 @@ public class MailJetService implements MailJet {
 					.processTemplateIntoString(freemarkerConfiguration.getTemplate(template), model));
 			return content.toString();
 		} catch (Exception e) {
-			log.error("getFreeMarkerTemplateContent: failed to get content", e);
+			log.error("getFreeMarkerTemplateContent: failed to get content", e.getMessage());
 		}
 		return "";
 	}

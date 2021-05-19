@@ -62,7 +62,7 @@ public class MSGenServiceImpl extends AbstractServiceImpl implements MSGenServic
 			response = restTemplate.exchange(uri, HttpMethod.POST, httpEntity, MSResponse.class);
 			log.debug("status code is  " + response.getStatusCodeValue());
 		} catch (Exception e) {
-			log.error("Exception Occured while generating microservice" + e.getMessage(), e);
+			log.error("Exception Occured while generating microservice" + e.getMessage());
 			throw new AcumosServiceException(AcumosServiceException.ErrorCode.INTERNAL_SERVER_ERROR, e.getMessage());
 		}
 

@@ -1199,7 +1199,7 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 		try {
 			updatedAuthor = updateRevisionAuthors(revision, authorTransportList);
 		} catch (Exception e) {
-			log.error(e.getMessage(), e);
+			log.error("updateRevisionAuthors failed: ", e.getMessage());
 			throw new AcumosServiceException(AcumosServiceException.ErrorCode.INTERNAL_SERVER_ERROR,
 					"Internal Server Error");
 		}
@@ -1266,7 +1266,7 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 			outputStream = artifactClient.getArtifact(uri);
 		} catch (Exception ex) {
 
-			log.error(" Exception in getPayload() ", ex);
+			log.error(" Exception in getPayload() ", ex.getMessage());
 			throw new AcumosServiceException(AcumosServiceException.ErrorCode.OBJECT_STREAM_EXCEPTION, ex.getMessage());
 
 		}
@@ -1296,7 +1296,7 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 				log.debug(" SolutionRevisonId for Version :  {} ", solutionRevisionId);
 			}
 		} catch (NoSuchElementException | NullPointerException e) {
-			log.error("Error : Exception in getProtoUrl() : Failed to fetch the Solution Revision Id", e);
+			log.error("Error : Exception in getProtoUrl() : Failed to fetch the Solution Revision Id", e.getMessage());
 			throw new NoSuchElementException("Failed to fetch the Solution Revision Id of the solutionId for the user");
 		}
 
@@ -1329,7 +1329,7 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 					}
 				} catch (NoSuchElementException | NullPointerException e) {
 					log.error("Error : Exception in getProtoUrl() : Failed to fetch the artifact URI for artifactType",
-							e);
+							e.getMessage());
 					throw new NoSuchElementException(
 							"Could not search the artifact URI for artifactType " + artifactType);
 				} finally {
@@ -1338,7 +1338,7 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 							byteArrayOutputStream.close();
 						}
 					} catch (IOException e) {
-						log.error("Error : Exception in getProtoUrl() : Failed to close the byteArrayOutputStream", e);
+						log.error("Error : Exception in getProtoUrl() : Failed to close the byteArrayOutputStream", e.getMessage());
 						throw new AcumosServiceException(AcumosServiceException.ErrorCode.IO_EXCEPTION, e.getMessage());
 					}
 				}
@@ -1372,7 +1372,7 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 				log.debug(" SolutionRevisonId for Version :  {} ", solutionRevisionId);
 			}
 		} catch (NoSuchElementException | NullPointerException e) {
-			log.error("Error : Exception in getLicenseUrl() : Failed to fetch the Solution Revision Id", e);
+			log.error("Error : Exception in getLicenseUrl() : Failed to fetch the Solution Revision Id", e.getMessage());
 			throw new NoSuchElementException("Failed to fetch the Solution Revision Id of the solutionId for the user");
 		}
 
@@ -1396,7 +1396,7 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 					}
 				} catch (NoSuchElementException | NullPointerException e) {
 					log.error("Error : Exception in getLicenseUrl() : Failed to fetch the artifact URI for artifactType",
-							e);
+							e.getMessage());
 					throw new NoSuchElementException(
 							"Could not search the artifact URI for artifactType " + artifactType);
 				} finally {
@@ -1405,7 +1405,7 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 							byteArrayOutputStream.close();
 						}
 					} catch (IOException e) {
-						log.error("Error : Exception in getLicenseUrl() : Failed to close the byteArrayOutputStream", e);
+						log.error("Error : Exception in getLicenseUrl() : Failed to close the byteArrayOutputStream", e.getMessage());
 						throw new AcumosServiceException(AcumosServiceException.ErrorCode.IO_EXCEPTION, e.getMessage());
 					}
 				}
@@ -1485,7 +1485,7 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 						extension, size, file.getInputStream());
 			} catch (ConnectionException | IOException | AuthenticationException | AuthorizationException
 					| TransferFailedException | ResourceDoesNotExistException e) {
-				log.error("Failed to upload the document", e);
+				log.error("Failed to upload the document", e.getMessage());
 				throw new AcumosServiceException(AcumosServiceException.ErrorCode.IO_EXCEPTION, e.getMessage());
 			}
 
@@ -1509,7 +1509,7 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 						"Cannot upload the Document to the specified path");
 			}
 		} catch (Exception e) {
-			log.error("Exception during addRevisionDocument ={}", e);
+			log.error("Exception during addRevisionDocument ={}", e.getMessage());
 			throw new AcumosServiceException(e.getMessage());
 		}
 		return document;
@@ -1548,7 +1548,7 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 				}
 			} catch (Exception e) {
 				// Log error and Do Nothing
-				log.error("Failed to fetch document for revisionId : " + revision.getRevisionId(), e);
+				log.error("Failed to fetch document for revisionId : " + revision.getRevisionId(), e.getMessage());
 			}
 		}
 
@@ -1561,7 +1561,7 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 			try {
 				nexusClient.deleteArtifact(document.getUri());
 			} catch (URISyntaxException e) {
-				log.error("Failed to delete the document from Nexus with documentId : " + document.getDocumentId(), e);
+				log.error("Failed to delete the document from Nexus with documentId : " + document.getDocumentId(), e.getMessage());
 				throw new AcumosServiceException(AcumosServiceException.ErrorCode.IO_EXCEPTION, e.getMessage());
 			}
 		}
