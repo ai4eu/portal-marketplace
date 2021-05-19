@@ -161,11 +161,6 @@ limitations under the License.
 						ng-disabled="editModel" alt="Manage My Model" title="Manage My Model">
 						 Manage My Model
 					</button>
-					<button
-						class="mdl-button mdl-js-button mdl-js-ripple-effect btn-secondary-small createMicroservice"						
-						ng-disabled="editModel" alt="Create Microservice" title="Create Microservice"  ng-if="showMicroService && isOnnxOrPFAModelFound !== true  &&  dockerUrlOfModel == ''"  ng-click="showMicroservice()">
-						Create Microservice
-					</button>
 					</span>
 				</div>
 				<span class="text-xsmall publish-text" ng-if="solutionCatalogsList && solutionCatalogsList.length > 0">Published on
