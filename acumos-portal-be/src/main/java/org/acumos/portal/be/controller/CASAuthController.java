@@ -229,7 +229,7 @@ public class CASAuthController extends AbstractController {
 			jsonResponse.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			jsonResponse.setStatusCode(400);
 			jsonResponse.setResponseDetail("Cas Service Validation Failed" + x.getMessage());
-			log.error( "Exception Occurred while serviceValidate()", x);
+			log.error( "Exception Occurred while serviceValidate()", x.getMessage());
 		}
 		finally {
 			log.info( uri + " response " + response);
@@ -271,9 +271,9 @@ public class CASAuthController extends AbstractController {
 				log.error( "User already have an role");
 			}
 		} catch (UserServiceException e) {
-			log.error( "Exception Occurred while createRole :", e);
+			log.error( "Exception Occurred while createRole :", e.getMessage());
 		} catch (Exception e) {
-			log.error( "Exception Occurred while createRole :", e);
+			log.error( "Exception Occurred while createRole :", e.getMessage());
 		}
 	}
 	

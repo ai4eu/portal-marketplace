@@ -147,7 +147,7 @@ public class PushAndPullSolutionServiceController extends AbstractController {
 		} catch (Exception e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			log.error(
-					"Exception Occurred downloading a artifact for a Solution in Push and Pull Solution service", e);
+					"Exception Occurred downloading a artifact for a Solution in Push and Pull Solution service", e.getMessage());
 		}
 		// return resource;
 	}
@@ -267,7 +267,7 @@ public class PushAndPullSolutionServiceController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			response.getWriter().write(ae.getMessage());
 			response.flushBuffer();
-			log.error("Exception Occurred during validation of license file", ae);
+			log.error("Exception Occurred during validation of license file", ae.getMessage());
 		}catch (StorageException e) {
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail(e.getMessage());
@@ -278,12 +278,12 @@ public class PushAndPullSolutionServiceController extends AbstractController {
 			response.flushBuffer();
 			
 			log.error(
-					"Exception Occurred while uploading the model in Push and Pull Solution service", e);
+					"Exception Occurred while uploading the model in Push and Pull Solution service", e.getMessage());
 		}
 		catch (Exception e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			log.error(
-					"Exception Occurred while uploading the model in Push and Pull Solution service", e);
+					"Exception Occurred while uploading the model in Push and Pull Solution service", e.getMessage());
 		}
 		return responseVO;
 	}
@@ -321,7 +321,7 @@ public class PushAndPullSolutionServiceController extends AbstractController {
 		} catch (Exception e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			log.error(
-					"Exception Occurred downloading a document for a Solution in Push and Pull Solution service", e);
+					"Exception Occurred downloading a document for a Solution in Push and Pull Solution service", e.getMessage());
 		}
 	}
 	
@@ -345,12 +345,12 @@ public class PushAndPullSolutionServiceController extends AbstractController {
 			response.flushBuffer();
 			
 			log.error(
-					"Exception Occurred while creating json file", e);
+					"Exception Occurred while creating json file", e.getMessage());
 		}
 		catch (Exception e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			log.error(
-					"Exception Occurred while creating json file", e);
+					"Exception Occurred while creating json file", e.getMessage());
 		}
 		return responseVO;
 	}
@@ -373,7 +373,7 @@ public class PushAndPullSolutionServiceController extends AbstractController {
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			response.getWriter().write(e.getMessage());
-			log.error("Exception Occurred while deleting file", e);
+			log.error("Exception Occurred while deleting file", e.getMessage());
 		}
 		return responseVO;
 	}
@@ -421,12 +421,12 @@ public class PushAndPullSolutionServiceController extends AbstractController {
 			response.flushBuffer();
 			
 			log.error(
-					"Exception Occurred while uploading the proto file in Push and Pull Solution service", e);
+					"Exception Occurred while uploading the proto file in Push and Pull Solution service", e.getMessage());
 		}
 		catch (Exception e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			log.error(
-					"Exception Occurred while uploading the proto file in Push and Pull Solution service", e);
+					"Exception Occurred while uploading the proto file in Push and Pull Solution service", e.getMessage());
 		}
 		
 			
@@ -451,7 +451,7 @@ public class PushAndPullSolutionServiceController extends AbstractController {
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			response.getWriter().write(e.getMessage());
-			log.error("Exception Occurred while deleting file", e);
+			log.error("Exception Occurred while deleting file", e.getMessage());
 		}
 		return responseVO;
 	}

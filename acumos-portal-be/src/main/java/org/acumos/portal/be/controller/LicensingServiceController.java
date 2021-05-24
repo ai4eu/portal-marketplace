@@ -159,7 +159,7 @@ public class LicensingServiceController extends AbstractController{
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 				response.getWriter().write(ae.getMessage());
 				response.flushBuffer();
-				log.error("Exception Occurred during validation of license file", ae);
+				log.error("Exception Occurred during validation of license file", ae.getMessage());
 			}catch (StorageException e) {
 				responseVO.setStatus(false);
 				responseVO.setResponseDetail(e.getMessage());
@@ -167,14 +167,14 @@ public class LicensingServiceController extends AbstractController{
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 				response.getWriter().write(e.getMessage());
 				response.flushBuffer();
-				log.error("Exception Occurred while uploading the license in Push and Pull Solution service", e);
+				log.error("Exception Occurred while uploading the license in Push and Pull Solution service", e.getMessage());
 			} catch (Exception e) {
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 				responseVO.setStatus(false);
 				responseVO.setResponseDetail(e.getMessage());
 				responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-				log.error("Exception Occurred while uploading the license in Push and Pull Solution service", e);
+				log.error("Exception Occurred while uploading the license in Push and Pull Solution service", e.getMessage());
 			}
 		}
 		return responseVO;
@@ -214,7 +214,7 @@ public class LicensingServiceController extends AbstractController{
 		catch (Exception e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			log.error(
-					"Exception Occurred while creating json file", e);
+					"Exception Occurred while creating json file", e.getMessage());
 		}
 		return responseVO;
 	}
@@ -241,12 +241,12 @@ public class LicensingServiceController extends AbstractController{
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail(licExp.getMessage());
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-			log.error( "Exception Occurred while fetching License Profiles", licExp);
+			log.error( "Exception Occurred while fetching License Profiles", licExp.getMessage());
 		} catch (Exception e) {
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail(e.getMessage());
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-			log.error( "Exception Occurred while fetching License Profiles", e);
+			log.error( "Exception Occurred while fetching License Profiles", e.getMessage());
 		}
 		return responseVO;
 	}
@@ -274,12 +274,12 @@ public class LicensingServiceController extends AbstractController{
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail(licExp.getMessage());
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-			log.error( "Exception Occurred while fetching License Profile", licExp);
+			log.error( "Exception Occurred while fetching License Profile", licExp.getMessage());
 		} catch (Exception e) {
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail(e.getMessage());
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-			log.error( "Exception Occurred while fetching License Profile", e);
+			log.error( "Exception Occurred while fetching License Profile", e.getMessage());
 		}
 		return responseVO;
 	}
@@ -321,7 +321,7 @@ public class LicensingServiceController extends AbstractController{
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail(e.getMessage());
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-			log.error( "Exception Occurred while creating License Profile", e);
+			log.error( "Exception Occurred while creating License Profile", e.getMessage());
 		}
 		return responseVO;
 	}
@@ -341,7 +341,7 @@ public class LicensingServiceController extends AbstractController{
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail(e.getMessage());
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-			log.error( "Exception Occurred while updating License Profile", e);
+			log.error( "Exception Occurred while updating License Profile", e.getMessage());
 		}
 		return responseVO;
 	}

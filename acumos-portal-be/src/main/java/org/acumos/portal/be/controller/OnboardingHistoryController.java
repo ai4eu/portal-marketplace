@@ -76,7 +76,7 @@ public class OnboardingHistoryController extends AbstractController {
 
 			data.setResponseCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred while Retrieving Tasks");
-			log.error("Exception Occurred while Retrieving Tasks", e);
+			log.error("Exception Occurred while Retrieving Tasks", e.getMessage());
 			response.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
 		}
 		return data;
@@ -102,7 +102,7 @@ public class OnboardingHistoryController extends AbstractController {
 
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred while getStepResults");
-			log.error("Exception Occurred while getStepResults", e);
+			log.error("Exception Occurred while getStepResults", e.getMessage());
 			response.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
 		}
 		return data;
@@ -130,7 +130,7 @@ public class OnboardingHistoryController extends AbstractController {
 
 			data.setResponseCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred while Retrieving MS task status");
-			log.error("Exception Occurred while Retrieving Task", e);
+			log.error("Exception Occurred while Retrieving Task", e.getMessage());
 			response.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
 		}
 		return data;

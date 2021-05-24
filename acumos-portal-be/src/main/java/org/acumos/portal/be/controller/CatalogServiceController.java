@@ -96,7 +96,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Fetching Catalogs");
-			log.error("Exception Occurred Fetching Catalogs", e);
+			log.error("Exception Occurred Fetching Catalogs", e.getMessage());
 		}
 		return data;
 	}
@@ -128,7 +128,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Fetching Catalogs");
-			log.error("Exception Occurred Fetching Catalogs", e);
+			log.error("Exception Occurred Fetching Catalogs", e.getMessage());
 		}
 		return data;
 	}
@@ -157,7 +157,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Searching Catalogs");
-			log.error("Exception Occurred Searching Catalogs", e);
+			log.error("Exception Occurred Searching Catalogs", e.getMessage());
 		}
 		return data;
 	}
@@ -189,7 +189,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Fetching Catalog");
-			log.error("Exception Occurred Fetching Catalog", e);
+			log.error("Exception Occurred Fetching Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -232,7 +232,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Creating Catalog");
-			log.error("Exception Occurred Creating Catalog", e);
+			log.error("Exception Occurred Creating Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -252,7 +252,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Updating Catalog");
-			log.error("Exception Occurred Updating Catalog", e);
+			log.error("Exception Occurred Updating Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -272,7 +272,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Deleting Catalog");
-			log.error("Exception Occurred Deleting Catalog", e);
+			log.error("Exception Occurred Deleting Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -302,7 +302,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Fetching Peer Catalog Access");
-			log.error("Exception Occurred Fetching Peer Catalog Access", e);
+			log.error("Exception Occurred Fetching Peer Catalog Access", e.getMessage());
 		}
 		return data;
 	}
@@ -324,7 +324,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Adding Catalog Access for Peer");
-			log.error("Exception Occurred Adding Catalog Access for Peer", e);
+			log.error("Exception Occurred Adding Catalog Access for Peer", e.getMessage());
 		}
 		return data;
 	}
@@ -346,7 +346,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Dropping Catalog Access for Peer");
-			log.error("Exception Occurred Dropping Catalog Access for Peer", e);
+			log.error("Exception Occurred Dropping Catalog Access for Peer", e.getMessage());
 		}
 		return data;
 	}
@@ -369,7 +369,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Fetching Catalog Solution Count");
-			log.error("Exception Occurred Fetching Catalog Solution Count", e);
+			log.error("Exception Occurred Fetching Catalog Solution Count", e.getMessage());
 		}
 		return data;
 	}
@@ -400,7 +400,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Fetching Catalog Solutions");
-			log.error("Exception Occurred Fetching Catalog Solutions", e);
+			log.error("Exception Occurred Fetching Catalog Solutions", e.getMessage());
 		}
 		return data;
 	}
@@ -429,7 +429,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Fetching Solution Catalogs");
-			log.error("Exception Occurred Fetching Solution Catalogs", e);
+			log.error("Exception Occurred Fetching Solution Catalogs", e.getMessage());
 		}
 		return data;
 	}
@@ -449,7 +449,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Adding Solution to Catalog");
-			log.error("Exception Occurred Adding Solution to Catalog", e);
+			log.error("Exception Occurred Adding Solution to Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -470,7 +470,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Dropping Solution from Catalog");
-			log.error("Exception Occurred Dropping Solution from Catalog", e);
+			log.error("Exception Occurred Dropping Solution from Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -500,7 +500,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Fetching User Favorite Catalogs");
-			log.error("Exception Occurred Fetching User Favorite Catalogs", e);
+			log.error("Exception Occurred Fetching User Favorite Catalogs", e.getMessage());
 		}
 		return data;
 	}
@@ -521,7 +521,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Adding Catalog to User Favorites");
-			log.error("Exception Occurred Adding Catalog to User Favorites", e);
+			log.error("Exception Occurred Adding Catalog to User Favorites", e.getMessage());
 		}
 		return data;
 	}
@@ -542,7 +542,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Dropping Catalog from User Favorites");
-			log.error("Exception Occurred Dropping Catalog from User Favorites", e);
+			log.error("Exception Occurred Dropping Catalog from User Favorites", e.getMessage());
 		}
 		return data;
 	}
@@ -571,7 +571,7 @@ public class CatalogServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception Occurred Fetching Catalog Peer Access");
-			log.error("Exception Occurred Fetching Catalog Peer Access", e);
+			log.error("Exception Occurred Fetching Catalog Peer Access", e.getMessage());
 		}
 		return data;
 	}

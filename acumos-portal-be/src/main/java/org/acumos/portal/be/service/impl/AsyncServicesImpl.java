@@ -379,7 +379,7 @@ public class AsyncServicesImpl extends AbstractServiceImpl implements AsyncServi
 			// If disconnected from onboarding service, catch related exceptions
 			// here
 		} catch (ConnectException | NoHttpResponseException e) {
-			log.error("Exception Occurred Onboarding the solution - No response ", e);
+			log.error("Exception Occurred Onboarding the solution - No response ", e.getMessage());
 
 			String reason = "Failed to connect to onboarding";
 
@@ -393,7 +393,7 @@ public class AsyncServicesImpl extends AbstractServiceImpl implements AsyncServi
 			// preference
 			sendEmailNotification(user.getUserId(), solution, e.getMessage());
 		} catch (Exception e) {
-			log.error("Exception Occurred Onboarding the solution ", e);
+			log.error("Exception Occurred Onboarding the solution ", e.getMessage());
 
 			// Send a bell notification to the user to alert of failure
 			sendBellNotification(user.getUserId(), e.getMessage());
@@ -468,7 +468,7 @@ public class AsyncServicesImpl extends AbstractServiceImpl implements AsyncServi
 			notifyBody.put("errorMessage", errorMessage);
 			notifyOnboardingStatus(userId, "HI", "Add To Catalog Failed for solution ", notifyBody, "ONBD_FAIL");
 		} catch (Exception e) {
-			log.error("Exception Occurred sending notification email ", e);
+			log.error("Exception Occurred sending notification email ", e.getMessage());
 		}
 	}
 
@@ -671,7 +671,7 @@ public class AsyncServicesImpl extends AbstractServiceImpl implements AsyncServi
 			try {
 				builder = new URIBuilder(env.getProperty("onboarding.push.model.dcae_url"));
 			} catch (URISyntaxException e1) {
-				log.error("Exception Occurred while calling onboarding convertSolutioToONAP ", e1);
+				log.error("Exception Occurred while calling onboarding convertSolutioToONAP ", e1.getMessage());
 			}
 
 			if (!StringUtils.isEmpty(solutionId)) {
@@ -697,7 +697,7 @@ public class AsyncServicesImpl extends AbstractServiceImpl implements AsyncServi
 			try {
 				post = new HttpPost(builder.build());
 			} catch (URISyntaxException e1) {
-				log.error("Exception Occurred while calling onboarding convertSolutioToONAP ", e1);
+				log.error("Exception Occurred while calling onboarding convertSolutioToONAP ", e1.getMessage());
 			}
 
 			if (!StringUtils.isEmpty(userId)) {
@@ -719,16 +719,16 @@ public class AsyncServicesImpl extends AbstractServiceImpl implements AsyncServi
 				log.debug("Call Onboarding URI : " + post.getURI());
 				response = httpclient.execute(post);
 			} catch (UnsupportedEncodingException e) {
-				log.error("Exception Occurred while convertSolutioToONAP ", e);
+				log.error("Exception Occurred while convertSolutioToONAP ", e.getMessage());
 			} catch (ClientProtocolException e) {
-				log.error("Exception Occurred while convertSolutioToONAP ", e);
+				log.error("Exception Occurred while convertSolutioToONAP ", e.getMessage());
 			} catch (IOException e) {
-				log.error("Exception Occurred while convertSolutioToONAP ", e);
+				log.error("Exception Occurred while convertSolutioToONAP ", e.getMessage());
 			} finally {
 				httpclient.close();
 			}
 		} catch (IOException e) {
-			log.error("Exception Occurred while convertSolutioToONAP ", e);
+			log.error("Exception Occurred while convertSolutioToONAP ", e.getMessage());
 		}
 
 		return response;

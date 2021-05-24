@@ -96,7 +96,7 @@ public class FilterCategoriesServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Fetching ML Solutions Categories for Market Place Catalog");
 			log.error(
-					"Exception Occurred Fetching ML Solutions Categories for Market Place Catalog", e);
+					"Exception Occurred Fetching ML Solutions Categories for Market Place Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -279,7 +279,7 @@ public class FilterCategoriesServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Fetching ML Solutions Access Types for Market Place Catalog");
 			log.error(
-					"Exception Occurred Fetching ML Solutions Access Type for Market Place Catalog", e);
+					"Exception Occurred Fetching ML Solutions Access Type for Market Place Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -314,7 +314,7 @@ public class FilterCategoriesServiceController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred Fetching ML Solutions Categories for Market Place Catalog");
 			log.error(
-					"Exception Occurred Fetching ML Solutions Categories for Market Place Catalog", e);
+					"Exception Occurred Fetching ML Solutions Categories for Market Place Catalog", e.getMessage());
 		}
 		return data;
 	}

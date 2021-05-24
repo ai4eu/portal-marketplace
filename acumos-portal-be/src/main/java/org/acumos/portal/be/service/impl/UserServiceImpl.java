@@ -166,7 +166,7 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService 
 			}
 		} catch (MailException ex) {
 			log.error(
-					"sendUserNotification: failed to send mail to user " + mlpUser.getEmail(), ex);
+					"sendUserNotification: failed to send mail to user " + mlpUser.getEmail(), ex.getMessage());
 		}
 
     }
@@ -190,7 +190,7 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService 
 	        user.setVerifyExpiration(null);
 	        dataServiceRestClient.updateUser(user);
         }catch (Exception e) {
-        	log.error(e.getMessage());
+        	log.error("Token Validation Failed", e.getMessage());
         	throw new AcumosServiceException(AcumosServiceException.ErrorCode.INVALID_PARAMETER, "Token Validation Failed");
         }
         return Boolean.TRUE;
@@ -206,7 +206,7 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService 
 	        //API tokens does not have any expiration date. No further checks
 
         }catch (Exception e) {
-        	log.error(e.getMessage());
+        	log.error("Token Validation Failed", e.getMessage());
         	throw new AcumosServiceException(AcumosServiceException.ErrorCode.INVALID_PARAMETER, "Token Validation Failed");
         }
         return user;
@@ -233,7 +233,7 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService 
 	        }
 
         }catch (Exception e) {
-        	log.error(e.getMessage());
+        	log.error("Token Regeneration Failed", e.getMessage());
         	throw new AcumosServiceException(AcumosServiceException.ErrorCode.INVALID_PARAMETER, "Token Regeneration Failed");
         }
         return Boolean.TRUE;
@@ -256,7 +256,7 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService 
 	        }
 
         }catch (Exception e) {
-        	log.error(e.getMessage());
+        	log.error("Api token Refresh Failed", e.getMessage());
         	throw new AcumosServiceException(AcumosServiceException.ErrorCode.INVALID_PARAMETER, "Api token Refresh Failed");
         }
     }
@@ -393,7 +393,7 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService 
 				oldPass = true;
 			} catch (Exception e) {
 				oldPass = false;
-				log.error( "Old password not matches : changeUserPassword ={}", e);
+				log.error( "Old password not matches : changeUserPassword ={}", e.getMessage());
 			}
 			// If Successful then try to change the password
 			if (oldPass) {
@@ -432,7 +432,7 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService 
 	            			mailJet.sendMail(mailData);
 	        		}
 	            } catch (MailException ex) {
-	                log.error( "Exception Occurred while Sending Mail to user ={}", ex);
+	                log.error( "Exception Occurred while Sending Mail to user ={}", ex.getMessage());
 	            }
 		}
 		return passwordChangeSuccessful;
@@ -499,7 +499,7 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService 
             			mailJet.sendMail(mailData);
         		}
             } catch (MailException ex) {
-                log.error( "Exception Occurred while Sending Mail to user ={}", ex);
+                log.error( "Exception Occurred while Sending Mail to user ={}", ex.getMessage());
             }
         }
 
@@ -639,7 +639,7 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserService 
             			mailJet.sendMail(mailData);
         		}
             } catch (MailException ex) {
-                log.error( "Exception Occurred while Sending Mail to user ={}", ex);
+                log.error( "Exception Occurred while Sending Mail to user ={}", ex.getMessage());
             }
         }
 }

@@ -62,7 +62,7 @@ public class MailServiceImpl implements MailService {
 			log.debug("sendMail: sent mail with subject: " + mailData.getSubject());
 		} catch (MailException ex) {
 			log.error(
-					"sendMail: failed to send mail with subject: " + mailData.getSubject(), ex);
+					"sendMail: failed to send mail with subject: " + mailData.getSubject(), ex.getMessage());
 		}
 	}
 
@@ -105,7 +105,7 @@ public class MailServiceImpl implements MailService {
 					.processTemplateIntoString(freemarkerConfiguration.getTemplate(template), model));
 			return content.toString();
 		} catch (Exception e) {
-			log.error("getFreeMarkerTemplateContent: failed to get content", e);
+			log.error("getFreeMarkerTemplateContent: failed to get content", e.getMessage());
 		}
 		return "";
 	}

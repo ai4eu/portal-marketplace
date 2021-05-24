@@ -107,7 +107,7 @@ public class GatewayController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_GATEWAY);
 			data.setResponseCode(String.valueOf(HttpServletResponse.SC_BAD_GATEWAY));
 			data.setResponseDetail(e.getMessage());
-			log.error( "Failed to get Connection",e);
+			log.error( "Failed to get Connection", e.getMessage());
 		}
 		return data;
 	}
@@ -155,7 +155,7 @@ public class GatewayController extends AbstractController {
 				data.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 				data.setResponseDetail(e.getMessage());
-				log.error( "Exception Occured while fetching the solutions",e);
+				log.error( "Exception Occured while fetching the solutions",e.getMessage());
 			}
 		}
 		return data;
@@ -195,7 +195,7 @@ public class GatewayController extends AbstractController {
 				data.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 				data.setResponseDetail(e.getMessage());
-				log.error( "No Solution Found for Dolution Id : " + solutionId, e);
+				log.error( "No Solution Found for Dolution Id : " + solutionId, e.getMessage());
 			}
 		}
 		return data;
@@ -227,7 +227,7 @@ public class GatewayController extends AbstractController {
 			response.setStatus(HttpServletResponse.SC_BAD_GATEWAY);
 			data.setResponseCode(String.valueOf(HttpServletResponse.SC_BAD_GATEWAY));
 			data.setResponseDetail(e.getMessage());
-			log.error( "Failed to get Connection",e);
+			log.error( "Failed to get Connection",e.getMessage());
 		}
 		return data;		
 	}

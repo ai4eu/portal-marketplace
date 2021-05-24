@@ -174,7 +174,7 @@ public class OnboardingDockerUploadController<T>  extends AbstractController {
 			data.setResponseDetail(e.getMessage());
 			data.setStatus(false);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred Fetching Solution Revisions for Docker Upload Controller", e);
+			log.error("Exception Occurred Fetching Solution Revisions for Docker Upload Controller", e.getMessage());
 		}
 		return data;
 	}	
@@ -214,7 +214,7 @@ public class OnboardingDockerUploadController<T>  extends AbstractController {
 			}
 		}catch (Exception e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred createSolutionsUsingDockerURL for Docker Upload Controller", e);
+			log.error("Exception Occurred createSolutionsUsingDockerURL for Docker Upload Controller", e.getMessage());
 		}
 		return dockerfileURIStr;
 	}

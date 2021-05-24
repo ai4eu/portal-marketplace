@@ -116,7 +116,7 @@ public class PublishSolutionServiceController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception Occurred while Publishing Model");
-			log.error( "Exception Occurred while publishSolution()", e);
+			log.error( "Exception Occurred while publishSolution()", e.getMessage());
 		}
 		return data;
 	}
@@ -145,7 +145,7 @@ public class PublishSolutionServiceController extends AbstractController {
 		} catch (Exception e) {
 			 data.setErrorCode(JSONTags.TAG_ERROR_CODE);
  			 data.setResponseDetail("Exception Occurred while unpublishSolution()");
-			log.error( "Exception Occurred while unpublishSolution()", e);
+			log.error( "Exception Occurred while unpublishSolution()", e.getMessage());
 		}
 		return data;
 	}

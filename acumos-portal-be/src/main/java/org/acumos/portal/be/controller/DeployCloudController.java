@@ -83,7 +83,7 @@ public class DeployCloudController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
 			response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 			data.setResponseDetail("Exception occurred while deploying to K8");
-			log.error("Exception occurred while deploying to K8", e);
+			log.error("Exception occurred while deploying to K8", e.getMessage());
 		}
 		return data;
 	
@@ -113,7 +113,7 @@ public class DeployCloudController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setResponseDetail("Exception occured while fetching K8 config");
-			log.error("Exception occured while fetching K8 config", e);
+			log.error("Exception occured while fetching K8 config", e.getMessage());
 		}
 		return data;
 	}

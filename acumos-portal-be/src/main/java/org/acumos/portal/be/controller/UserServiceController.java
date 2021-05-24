@@ -171,7 +171,7 @@ public class UserServiceController extends AbstractController {
 		catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Failed");
-			log.error("Exception Occurred while createUser()", e);
+			log.error("Exception Occurred while createUser()", e.getMessage());
 		}
 		return data;
 	}
@@ -186,7 +186,7 @@ public class UserServiceController extends AbstractController {
 		try {
 			userService.verifyUser(user.getLoginName(), user.getVerifyToken());
 		} catch (Exception e) {
-			log.error("Exception Occurred while verifyUser()", e);
+			log.error("Exception Occurred while verifyUser()", e.getMessage());
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
@@ -206,7 +206,7 @@ public class UserServiceController extends AbstractController {
 		try {
 			userService.regenerateVerifyToken(user.getLoginName());
 		} catch (Exception e) {
-			log.error("Exception Occurred while regenerating VerifyToken()", e);
+			log.error("Exception Occurred while regenerating VerifyToken()", e.getMessage());
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
@@ -226,7 +226,7 @@ public class UserServiceController extends AbstractController {
 		try {
 			userService.refreshApiToken(user.getUserId());
 		} catch (Exception e) {
-			log.error("Exception Occurred while regenerating VerifyToken()", e);
+			log.error("Exception Occurred while regenerating VerifyToken()", e.getMessage());
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
@@ -260,7 +260,7 @@ public class UserServiceController extends AbstractController {
 			responseObj.setStatus(false);
 			responseObj.setResponseDetail("Failed");
 			responseObj.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
-			log.error("Exception Occurred while updateUser()", e);
+			log.error("Exception Occurred while updateUser()", e.getMessage());
 		}
 				
 		return responseObj;
@@ -290,7 +290,7 @@ public class UserServiceController extends AbstractController {
 			responseObj.setStatus(false);
 			responseObj.setResponseDetail("Failed");
 			responseObj.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
-			log.error("Exception Occurred while deleteToken()", e);
+			log.error("Exception Occurred while deleteToken()", e.getMessage());
 		}
 		return responseObj;
 	}
@@ -361,7 +361,7 @@ public class UserServiceController extends AbstractController {
 			responseObj.setStatus(false);
 			responseObj.setResponseDetail("Failed");
 			responseObj.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
-			log.error("Exception Occurred while updateInfo()", e);
+			log.error("Exception Occurred while updateInfo()", e.getMessage());
 		}
 	}
 
@@ -418,7 +418,7 @@ public class UserServiceController extends AbstractController {
 			responseObj.setStatus(false);
 			responseObj.setResponseDetail("Failed");
 			responseObj.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
-			log.error("Exception Occurred while forgetPassword()", e);
+			log.error("Exception Occurred while forgetPassword()", e.getMessage());
 		}
 		return responseObj;
 	}
@@ -450,7 +450,7 @@ public class UserServiceController extends AbstractController {
             responseVO.setStatus(false);
             responseVO.setResponseDetail("Failed");
             responseVO.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
-            log.error("Exception Occurred while changeUserPassword()", e);
+            log.error("Exception Occurred while changeUserPassword()", e.getMessage());
         }
         return responseVO;
     }
@@ -481,7 +481,7 @@ public class UserServiceController extends AbstractController {
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail("Failed");
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred while getUserAccountDetails()", e);
+			log.error("Exception Occurred while getUserAccountDetails()", e.getMessage());
 		}
 		return responseVO;
 	}  
@@ -505,7 +505,7 @@ public class UserServiceController extends AbstractController {
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail("Failed");
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred while getAllUsers()", e);
+			log.error("Exception Occurred while getAllUsers()", e.getMessage());
 		}
 		return responseVO;
 	} 
@@ -531,7 +531,7 @@ public class UserServiceController extends AbstractController {
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail("Failed");
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred while getUserRole()", e);
+			log.error("Exception Occurred while getUserRole()", e.getMessage());
 		}
 		return responseVO;
 	} 
@@ -565,7 +565,7 @@ public class UserServiceController extends AbstractController {
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail("Failed");
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred while updateUserImage()", e);
+			log.error("Exception Occurred while updateUserImage()", e.getMessage());
 		}
 		return responseVO;
     }
@@ -606,7 +606,7 @@ public class UserServiceController extends AbstractController {
 			responseVO.setStatus(false);
 			responseVO.setResponseDetail("Failed");
 			responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-			log.error("Exception Occurred while getUserImage()", e);
+			log.error("Exception Occurred while getUserImage()", e.getMessage());
 		}
 		return responseVO;
 	}
@@ -774,7 +774,7 @@ public class UserServiceController extends AbstractController {
 	            responseVO.setStatus(false);
 	            responseVO.setResponseDetail("Failed");
 	            responseVO.setStatusCode(HttpServletResponse.SC_BAD_REQUEST);
-	            log.error("Exception Occurred while getAllActiveUsers()", e);
+	            log.error("Exception Occurred while getAllActiveUsers()", e.getMessage());
 	        }
 	        return responseVO;
 	    }

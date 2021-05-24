@@ -153,7 +153,7 @@ public class WebBasedOnboardingController extends AbstractController {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail("Exception Occurred OnBoarding Solutions for Market Place Catalog");
 			log.error(
-					"Exception Occurred OnBoarding Solutions for Market Place Catalog", e);
+					"Exception Occurred OnBoarding Solutions for Market Place Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -181,7 +181,7 @@ public class WebBasedOnboardingController extends AbstractController {
 			data.setResponseDetail(
 					"Exception Occurred while providing Status of the Solutions OnBoarded for Market Place Catalog");
 			log.error(
-					"Exception Occurred while providing Status of the Solutions OnBoarded for Market Place Catalog", e);
+					"Exception Occurred while providing Status of the Solutions OnBoarded for Market Place Catalog", e.getMessage());
 		}
 		return data;
 	}
@@ -220,7 +220,7 @@ public class WebBasedOnboardingController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception occured while createStepResult");
-			log.error( "Exception Occurred createStepResult :", e);
+			log.error( "Exception Occurred createStepResult :", e.getMessage());
 		}
 		return data;
 	}
@@ -252,7 +252,7 @@ public class WebBasedOnboardingController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception occured while updateStepResult");
-			log.error( "Exception Occurred updateStepResult :", e);
+			log.error( "Exception Occurred updateStepResult :", e.getMessage());
 		}
 		return data;
 	}
@@ -278,7 +278,7 @@ public class WebBasedOnboardingController extends AbstractController {
 		} catch (Exception e) {
 			data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 			data.setResponseDetail("Exception occured while deleteStepResult");
-			log.error( "Exception Occurred deleteStepResult :", e);
+			log.error( "Exception Occurred deleteStepResult :", e.getMessage());
 		}
 		return data;
 	}
@@ -306,7 +306,7 @@ public class WebBasedOnboardingController extends AbstractController {
 			} catch (Exception e) {
 				data.setErrorCode(JSONTags.TAG_ERROR_CODE_EXCEPTION);
 				data.setResponseDetail("Exception occured while searchStepResults");
-				log.error( "Exception Occurred searchStepResults :", e);
+				log.error( "Exception Occurred searchStepResults :", e.getMessage());
 			}
 		}
 		return data;
@@ -333,7 +333,7 @@ public class WebBasedOnboardingController extends AbstractController {
 			data.setResponseDetail(
 					"Exception Occurred while providing Status of the Solutions OnBoarded for Market Place Catalog");
 			log.error(
-					"Exception Occurred while providing Status of the Solutions OnBoarded for Market Place Catalog", e);
+					"Exception Occurred while providing Status of the Solutions OnBoarded for Market Place Catalog", e.getMessage());
 		}
 		return data;
 	}

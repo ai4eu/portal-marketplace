@@ -53,7 +53,7 @@ public class MicroServiceController extends AbstractController {
 		} catch (Exception e) {
 			data.setResponseCode(JSONTags.TAG_ERROR_CODE);
 			data.setResponseDetail(e.getMessage());
-			log.error("Exception Occurred while generating microservice", e);
+			log.error("Exception Occurred while generating microservice", e.getMessage());
 		}
 		return data;
 	}
