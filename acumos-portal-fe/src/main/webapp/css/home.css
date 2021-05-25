@@ -59,7 +59,7 @@ body, h1, h2, h3, h4, h5, h6, p, .mdl-button{font-family: 'Open Sans', sans-seri
 .search-icon{font-size: 22px; line-height: 22px;}
 .signupnav ul {padding-left:10px;}
 .signupnav ul li{font-size:12px; line-height:55px; display:inline; text-transform:uppercase; margin:0; }
-.signupnav ul li a{color:#FFF; text-decoration:none;}
+.signupnav ul li a{color:#0362a7; text-decoration:none;}
 .signupnav ul li:first-child::after{content:"|"; padding:0 17px;}
 
 
@@ -176,7 +176,11 @@ position:relative;
 
 
 /* footer */
-.home-footer{position:relative; background-color:#0f0c13; color:#7c7c7c; padding:30px; background-image:url("../images/footer_mountain_large.png"); background-repeat:no-repeat; background-position:bottom center; min-height: 298px;}
+.home-footer{
+    position:relative;
+    background: linear-gradient(90deg, #081d53, #01366f, #00528d, #0071ad, #0094cf, #00b8f0, #08bcd0, #31c0af, #58c58d, #7eca69, #a2cf44 );
+    color:white;
+    padding:30px; }
 .home-footer section > div{float:left;}
 .home-footer section > div:nth-child(1){width:35%;}
 .home-footer section > div:nth-child(2){width:20%;}
@@ -185,8 +189,8 @@ position:relative;
 .home-footer  ul{padding:0; font-size:12px; padding-right:60px; line-height:20px; margin-top: 18px;}
 .home-footer ul.contact-info{padding-right:0;}
 /* .home-footer ul.contact-info span span{margin-left:25px; float:left;} */
-.home-footer  ul li{list-style-type:none; margin-left:0;}
-.home-footer  a{color:#7c7c7c; text-decoration:none;}
+.home-footer  ul li{list-style-type:none; margin-left:0; padding-right: 10px; font-size: larger; display: inline-block;}
+.home-footer  a{color:white; text-decoration:none;}
 .home-footer .heading{height:34px; display:block; border-bottom:1px solid #2e2c32;}
 .home-footer .heading span{position:relative; border-bottom:1px solid #8e7919; padding: 7px 0 6px 0; float: left; }
 .home-footer .heading.footer-logo{font-size:18px; font-style:uppercase; font-weight:bold; padding-top: 0px; line-height: 35px; padding-bottom: 0px;}
