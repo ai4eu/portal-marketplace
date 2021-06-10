@@ -45,39 +45,8 @@ limitations under the License.
 		<div class="mdl-grid mdl-grid--no-spacing">
 			<div class="mdl-cell mdl-cell--12-col posrel onboarding">
 				<div id="mdl-table">
-					<div
-						class="mdl-textfield peerpopup onboardpeer mdl-js-textfield mdl-textfield--expandable is-upgraded is-focused mdl-cell--12-col">
-						<div
-							data-ng-init="getonboardingOverview(); getOnboardingCLIUrls();"
-							ng-bind-html="onboard_overview"></div>
-						<!-- Some information can be display related to this On-Boarding, such
-						as how to complete this task what are data required.  -->
-						<span>For CLI on-boarding, the two API URLs are:</span><br /> <b><span>Push
-								URL: </span><span ng-bind="cliPushUrl"></span></b> <br /> <b><span>Auth
-								URL: </span><span ng-bind="cliAuthUrl"></span></b> <br /> <br /> <span>To
-							know more about on-boarding, please have a look at : </span> <b><a
-							href="https://docs.acumos.org/en/latest/submodules/portal-marketplace/docs/user-guides/portal-user/portal/index.html"
-							target="_blank">https://docs.acumos.org/en/latest/submodules/portal-marketplace/docs/user-guides/portal-user/portal/index.html</a></b>
-						</p>
-					</div>
-
-					<div>
-						<button ui-sref="onboardingHistory"
-							class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-primary btnhistory"
-							alt="View On-boarding History" title="View On-boarding History"
-							ng-disabled="!userLoggedIn">
-							View On-boarding History &nbsp;<img
-								src="images/model_details/onboarding_history.png" alt=""
-								title="" ng-show="userLoggedIn" /> <img
-								src="images/model_details/onboarding_history_disabled.png"
-								alt="" title="" ng-show="!userLoggedIn" />
-						</button>
-					</div>
-
 					<div class="posrel">
-						<md-tabs md-dynamic-height md-border-bottom> 
-						<md-tab label="On-Boarding Dockerized model uri"
-							ng-click="selectedLicense = -1;"> <alert-message
+						<alert-message
 							msg="msg" icon="icon" styleclass="styleclass"
 							ng-show="showAlertMessage"></alert-message>
 						<div class="mdl-tabs__panel docker_onboarding">
@@ -201,6 +170,7 @@ limitations under the License.
 																<label for="input_32">Port</label> <input type="text"
 																	class="md-input" id="input_32" name="port"
 																	ng-model="port"
+																	ng-disabled="disablePortField"
 																	ng-pattern="/^([0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$/"
 																	ng-blur="portVisited=true"
 																	ng-focus="portVisited=false">
@@ -213,6 +183,11 @@ limitations under the License.
 																</md-input-container>
 															</div>
 
+														</div>
+														<div class="dc-row">
+															<button class="md-dense mdl-button mdl-js-button btn-secondary md-ink-ripple" type="button" ng-disabled="host || port" ng-click="setDockerHubValues()" title="Set values for Docker Hub" alt="Set values for Docker Hub" data-upgraded=",MaterialButton">
+																<span>Set values for Docker Hub</span>
+															</button>
 														</div>
 														<div class="dc-row">
 															<div
@@ -247,7 +222,7 @@ limitations under the License.
 														<div class="new-doc-model">
 															<div
 																class="mdl-cell--8-col mdl-cell--5-col-tablet mdl-cell--4-col-phone">
-																<label>Upload Protobuf File</label>
+																<label for="onboardingForm" class="md-required">Upload Protobuf File</label>
 																<hr style="visibility: hidden; margin: 2px;" />
 																<form class="ng-pristine ng-valid" name="onboardingForm">
 																	<div
@@ -464,14 +439,26 @@ limitations under the License.
 											</div>
 										</div>
 										<!-- left section end -->
-										<div
-											class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--4-col-phone upload-model-bundle-right ">
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--4-col-phone upload-model-bundle-right ">
 											<div class="upload-model-bundle-right-content">
-												<h5>Instruction for dockerized model URI on-boarding</h5>
+												<h5>Onboarding History</h5>
+												<button ui-sref="onboardingHistory"
+													class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-primary btnhistory"
+													alt="View On-boarding History" title="View On-boarding History"
+													ng-disabled="!userLoggedIn">
+													View On-boarding History &nbsp;<img
+														src="images/model_details/onboarding_history.png" alt=""
+														title="" ng-show="userLoggedIn" /> <img
+														src="images/model_details/onboarding_history_disabled.png"
+														alt="" title="" ng-show="!userLoggedIn" />
+												</button>
+
+												<h5>Onboarding Documentation</h5>
 												<p>
-													<a
-														href="https://docs.acumos.org/en/latest/submodules/on-boarding/docs/onboarding-pre_dockerised_and_URI_guide.html"
-														target="_blank">On-board a dockerized model URI</a>
+													<a href="https://docs.acumos.org/en/latest/submodules/on-boarding/docs/onboarding-pre_dockerised_and_URI_guide.html" target="_blank">On-board a dockerized model URI</a>
+												</p>
+													<p>
+													<a href="https://docs.acumos.org/en/latest/submodules/portal-marketplace/docs/user-guides/portal-user/portal/" target="_blank">Acumos Portal for Modelers</a>
 												</p>
 											</div>
 										</div>
@@ -479,16 +466,15 @@ limitations under the License.
 
 									<div class="onboardbtn">
 										<button ng-click="addToCatalog(true)"
-											ng-disabled="modelDocLicUploadError || !host || !image || !modelDockerURLName || ( disableOnboardingButton == true ) || (fileSubmitproto && docoerizedUriprotofile.name)  || (isDockerLicUploaded && (licenseOption=='Upload' && !(licenseDocfile && fileSubmitDocLicense))) || (isDockerLicUploaded && (licenseOption=='selectLicProfile' &&  (!licenseDocfile || selectedLicense == -1))) || !disableDockerRefreshButton"
+											ng-disabled="modelDocLicUploadError || !host || !image || !modelDockerURLName || ( disableOnboardingButton == true ) || fileSubmitproto  || (isDockerLicUploaded && (licenseOption=='Upload' && !(licenseDocfile && fileSubmitDocLicense))) || (isDockerLicUploaded && (licenseOption=='selectLicProfile' &&  (!licenseDocfile || selectedLicense == -1))) || !disableDockerRefreshButton"
 											class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-primary "
 											alt="Add to Catalog" title="Add to Catalog">
 											On-board Model</button>
 										<button type="reset"
-											ng-disabled="!(stepfailed == true || allSuccess == true) || (disableDockerRefreshButton == true)"
+											ng-disabled="!(stepfailed == true || allSuccess == true || host || image || port || !disableDockerRefreshButton)"
 											ng-click="resetDockerURLForm(); licenseOption = 'Upload'"
 											class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-primary "
-											alt="Add to Catalog" title="Add to Catalog">Upload
-											New</button>
+											alt="Reset Form" title="Reset Form">Reset Form</button>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -496,8 +482,7 @@ limitations under the License.
 							<!-- on-boarding-web end-->
 						</div>
 
-						</md-content> </md-tab> 
-						 </md-tabs>
+						</md-content>
 
 					</div>
 				</div>

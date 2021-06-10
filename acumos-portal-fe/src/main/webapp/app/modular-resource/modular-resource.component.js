@@ -101,6 +101,7 @@ angular.module('modelResource')
 			$scope.licenseOption = 'Upload';
 			$scope.isDockerModelLicUploaded = false;
 			
+			$scope.disablePortField = false;
 			$scope.dockerBackScreen = true;
 			$scope.disableRefreshButton = true;
 			$scope.disableDockerRefreshButton = true;
@@ -675,6 +676,7 @@ angular.module('modelResource')
 			
 			$scope.clearExistingDockerURLNotifications = function(){
                 $scope.disableDockerRefreshButton = true;
+				$scope.disablePortField = false;
                 $scope.fileSubmitDocLicense = false;
                 $scope.disableUploadDLCheckbox = false;
                 $rootScope.trackId = false;
@@ -748,19 +750,19 @@ angular.module('modelResource')
 							function(response) {
 								$location.hash('page-top');
 		                        $anchorScroll();
-		                        $scope.msg = "On-boarding process has started and it will take 30 seconds to reflect the change in status."; 
+		                        $scope.msg = "On-boarding process has started and it will take a few seconds to reflect the change in status."; 
 		                        $scope.icon = 'info_outline';
 		                        $scope.styleclass = 'c-info';
 		                        $scope.showAlertMessage = true;
 		                        $timeout(function() {
 		                        	$scope.showAlertMessage = false;
-		                        }, 8000);
+		                        }, 5000);
 		                        
 								$scope.trackId = response.data.response_detail;
 								
 								$scope.clearInterval = $interval(function(){
 									$scope.showValidationStatus();
-								}, 25000);
+								}, 5000);
 								
 							},
 							function(error) {
@@ -774,17 +776,17 @@ angular.module('modelResource')
 								$scope.trackId = response.data.response_detail;
 								$location.hash('onap-onboarding');  // id of a container on the top of the page - where to scroll (top)
 		                        $anchorScroll(); 
-		                        $scope.msg = "On-boarding process has started and it will take 30 seconds to reflect the change in status."; 
+		                        $scope.msg = "On-boarding process has started and it will take a few seconds to reflect the change in status."; 
 		                        $scope.icon = '';
 		                        $scope.styleclass = 'c-warning';
 		                        $scope.showAlertMessage = true;
 		                        $timeout(function() {
 		                        	$scope.showAlertMessage = false;
-		                        }, 8000);
+		                        }, 5000);
 
 								$scope.clearInterval = $interval(function(){
 									$scope.showValidationStatus();
-								}, 25000);
+								}, 5000);
 								
 							},
 							function(error) {
@@ -1008,6 +1010,10 @@ angular.module('modelResource')
 			        		$scope.msg = "Error in deleting license file.";
 				   		});
 			   }
+		   }
+		   $scope.setDockerHubValues = function(){
+				$scope.host = 'hub.docker.com';
+				$scope.disablePortField = true;
 		   }
 		}
 });
