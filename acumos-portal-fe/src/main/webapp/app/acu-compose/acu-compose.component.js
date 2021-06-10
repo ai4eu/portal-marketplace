@@ -203,13 +203,18 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
         }
         else
         	$scope.selectedIndex = type+ver;
-        $http.get(_catalog.fModelUrl(_components.get(type+'+'+nodeVersion))).success(function(tgif) {
+        var uri = _catalog.fModelUrl(_components.get(type+'+'+nodeVersion));
+        console.warn("XXX get", type, uri);
+        $http.get(uri).success(function(tgif) {
+            console.warn("XXX tgif ", tgif);
             nodeId = _components.get(type+'+'+nodeVersion).solutionId;
             $scope.solutionDetails=_components.get(type+'+'+nodeVersion);
             $scope.showProperties=null;
             $scope.packageName= JSON.stringify(tgif.self.name);
             $scope.requireCalls= tgif.services.calls;
+            console.warn("XXX tgif requireCalls", $scope.requireCalls);
             $scope.capabilityProvides=tgif.services.provides;
+            console.warn("XXX tgif capabilityProvides", $scope.capabilityProvides);
             draggedNodes.set(data.nodeId, $scope.solutionDetails);
             var url= build_url(options.protobuf, {
                 userId: get_userId(),
@@ -338,6 +343,7 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
             }
             data.modelName = type;
             
+            console.log("XXX dropping node", data);
             if(_solutionId){
                 url = build_url(options.addNode, {
                     userId: get_userId(),
