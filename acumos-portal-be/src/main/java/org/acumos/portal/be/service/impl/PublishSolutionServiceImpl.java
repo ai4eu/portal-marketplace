@@ -31,17 +31,24 @@ import org.acumos.cds.client.ICommonDataServiceRestClient;
 import org.acumos.cds.domain.MLPCatalog;
 import org.acumos.cds.domain.MLPNotification;
 import org.acumos.cds.domain.MLPPublishRequest;
+import org.acumos.cds.domain.MLPRole;
 import org.acumos.cds.domain.MLPSolution;
 import org.acumos.cds.domain.MLPSolutionRevision;
+import org.acumos.cds.domain.MLPUser;
 import org.acumos.cds.transport.RestPageRequest;
 import org.acumos.cds.transport.RestPageResponse;
 import org.acumos.licensemanager.exceptions.LicenseAssetRegistrationException;
 import org.acumos.portal.be.common.CommonConstants;
 import org.acumos.portal.be.common.exception.AcumosServiceException;
+import org.acumos.portal.be.common.exception.UserServiceException;
 import org.acumos.portal.be.service.LicensingService;
 import org.acumos.portal.be.service.NotificationService;
 import org.acumos.portal.be.service.PublishSolutionService;
+import org.acumos.portal.be.service.UserRoleService;
+import org.acumos.portal.be.transport.MLRole;
 import org.acumos.portal.be.util.PortalUtils;
+import org.acumos.portal.be.util.URIBuildUtils;
+import org.acumos.portal.be.security.RoleAuthorityConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +65,14 @@ public class PublishSolutionServiceImpl extends AbstractServiceImpl implements P
 	
 	@Autowired
 	private LicensingService licensingService;
+
+	@Autowired
+	private UserRoleService userRoleService;
+
+	@Autowired
+	private NotificationService notificationService;
+
+	private static final String MSG_SEVERITY_ME = "ME";
 
 	
 	public PublishSolutionServiceImpl() {
@@ -136,6 +151,14 @@ public class PublishSolutionServiceImpl extends AbstractServiceImpl implements P
 		
 		//Create separate service for creating request and use single service all over the code
 		publishRequest = dataServiceRestClient.createPublishRequest(publishRequest);
+
+		try {
+			if (publishRequest.getRequestId() != null) {
+				generateNotificationsForPublishRequest(publishRequest, mlpSolution2.getName());
+			}
+		} catch (UserServiceException ex) {
+			log.error("generateNotificationsForPublishRequest failed ={}", ex.getMessage());
+		}
 		
 		log.info("publish request has been created for solution {} with request Id as {}  ", solutionId, publishRequest.getRequestId());
 		// Change the return type to send the message that request has been created 
@@ -143,8 +166,36 @@ public class PublishSolutionServiceImpl extends AbstractServiceImpl implements P
 		return  publishStatus;
 	}
 
-	
-	
+	private void generateNotificationsForPublishRequest(MLPPublishRequest publishRequest, String solutionName) throws UserServiceException {
+		List<MLRole> allRoles = userRoleService.getAllRoles();
+		String publisherRoleId = null;
+
+		for (MLRole r : allRoles) {
+			if (RoleAuthorityConstants.PUBLISHER.equalsIgnoreCase(r.getName())) {
+				publisherRoleId = r.getRoleId();
+				break;
+			}
+		}
+
+		if (publisherRoleId == null) {
+			log.error("Publisher role id not found");
+			return;
+		}
+
+		List<MLPUser> publishers = userRoleService.getRoleUsers(publisherRoleId);
+		String portalAddress = env.getProperty("portal.ui.server.address");
+		String publishRequestUrl = portalAddress + "/#/publishRequest";
+		String message = "A publish request has been created for solution: " + solutionName + "\nPlease review it at: " + publishRequestUrl;
+
+		for (MLPUser pubUser : publishers) {	
+			log.info("generateNotification for user " + pubUser.getUserId() + " (" + message + ")");		
+			MLPNotification notificationObj = new MLPNotification();
+			notificationObj.setMsgSeverityCode(MSG_SEVERITY_ME);
+			notificationObj.setMessage(message);
+			notificationObj.setTitle("Pending publish request");
+			notificationService.generateNotification(notificationObj, pubUser.getUserId());
+		}
+	}	
 	
 	@Override
 	public String unpublishSolution(String solutionId, String catalogId, String userId,long publishRequestId) {
