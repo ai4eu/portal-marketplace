@@ -324,6 +324,10 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
             	type = "TrainingClient";
             	def.extras = [];
             	break;
+            case 'SF':
+            	type = "SharedFolder";
+            	def.extras = [];
+            	break;
             default:
             	if(check_isValid_calls === "ANY" && check_isValid_provides === "ANY"){
                     type = "DataMapper";
