@@ -459,7 +459,12 @@ public class MarketPlaceCatalogServiceImpl extends AbstractServiceImpl implement
 				for (MLPArtifact artifact : mlpSolutionRevisions) {
 					if(!artifact.getUri().contains(PortalConstants.TOSCA)) {
 						String[] st = artifact.getUri().split("/");
-						String name = st[st.length - 1];
+						String name;
+						if (artifact.getUri().toLowerCase().contains("docker.com") || artifact.getUri().toLowerCase().contains("docker.io")) {
+							name = st[st.length - 2] + "/" + st[st.length - 1];
+						} else {
+							name = st[st.length - 1];
+						}
 						artifact.setName(name);
 						artifactList.add(artifact);
 					}
