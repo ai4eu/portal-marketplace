@@ -21,14 +21,13 @@ limitations under the License.
 'use strict';
 
 
-app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, ngQuillConfigProvider, $authProvider, tagsInputConfigProvider, $mdAriaProvider){
+app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, ngQuillConfigProvider, $authProvider, tagsInputConfigProvider){
 	tagsInputConfigProvider.setDefaults('tagsInput', {
         placeholder: ''
     });
 	ngQuillConfigProvider.set();
 	$urlRouterProvider.when('','/home');
 	$urlRouterProvider.otherwise('/404Error');
-	$mdAriaProvider.disableWarnings();
 	$httpProvider.interceptors.push('authenticationInterceptor');
 	$stateProvider
 		 .state('404Error', {
