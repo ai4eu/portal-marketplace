@@ -203,7 +203,8 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
         }
         else
         	$scope.selectedIndex = type+ver;
-        $http.get(_catalog.fModelUrl(_components.get(type+'+'+nodeVersion))).success(function(tgif) {
+        var uri = _catalog.fModelUrl(_components.get(type+'+'+nodeVersion));
+        $http.get(uri).success(function(tgif) {
             nodeId = _components.get(type+'+'+nodeVersion).solutionId;
             $scope.solutionDetails=_components.get(type+'+'+nodeVersion);
             $scope.showProperties=null;
@@ -235,6 +236,7 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
                 if(value.request.format.length !== 0){
                     check_isValid_calls = value.request.format[0].messageName;
                     var reqObj = value.request.format;
+                    var reqStreaming=value.request.streaming;
                     var reqOperation=value.config_key;
                     requirementJson.push({
                         "name": "",
@@ -242,6 +244,7 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
                         "id": "",
                         "capability": {
                             "name":reqObj,
+                            "stream": reqStreaming,
                             "id": reqOperation
                         },
                         "target": {"name": "","description": ""},
@@ -254,12 +257,14 @@ function ACController($scope,$http,$filter,$q,$window,$rootScope,$mdDialog ,$sta
                 if(value.request.format.length !== 0){
                     check_isValid_provides = value.request.format[0].messageName;
                     var capObj = value.request.format;
+                    var capStreaming=value.request.streaming;
                     var capOperation=value.route;
                     capabilityJson.push({
                         "id": "",
                         "name":"",
                         "target": {
                             "name":capObj,
+                            "stream": capStreaming,
                             "id": capOperation
                         },
                         "target_type": "Capability",
