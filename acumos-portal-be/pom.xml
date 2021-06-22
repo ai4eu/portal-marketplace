@@ -24,7 +24,7 @@ limitations under the License.
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.acumos.portal-marketplace</groupId>
 	<artifactId>acumos-portal-be</artifactId>
-	<version>4.0.14-kinrw-v3</version>
+	<version>4.0.14-ai4eu-v18</version>
 	<name>Acumos Portal backend server</name>
 	<description>Acumos Portal Backend APIs</description>
 	<parent>
@@ -53,9 +53,9 @@ limitations under the License.
 		https://nexus.acumos.org/content/repositories/releases/ -->
 	<dependencies>
 		<dependency>
-			<groupId>org.acumos.common-dataservice</groupId>
+			<groupId>ai4eu.common-dataservice</groupId>
 			<artifactId>cmn-data-svc-client</artifactId>
-			<version>3.1.1</version>
+			<version>3.2.0-ai4eu-v1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.acumos.acumos-nexus-client</groupId>

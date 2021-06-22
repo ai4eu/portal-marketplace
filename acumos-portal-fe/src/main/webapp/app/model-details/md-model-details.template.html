@@ -412,7 +412,9 @@ limitations under the License.
 										<!-- <a class="link-blue" href="#"> --><!-- Version name 
 										{{value.name}}<!-- </a>  <span class="font600"></span> -->
 										
-										<label class="a-tooltip"><span class="a-tooltipval">{{value.name}}</span>
+										<label class="a-tooltip">
+											<span class="a-tooltipval" ng-if="value.artifactType != 'DI'">{{value.name}}</span>
+											<span class="a-tooltipval" style="overflow: visible;" ng-if="value.artifactType == 'DI'">{{value.artifactUri}}</span>
 											<span class="a-tooltiptext">{{value.name}}</span>
 										</label>					
 									</td>

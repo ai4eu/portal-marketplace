@@ -168,7 +168,8 @@ public class NotificationServiceImpl extends AbstractServiceImpl implements Noti
 						"Notification message can not be null: generateNotification()");
 			}
 		} catch (Exception e) {
-			log.error( "Exception Occurred while getNotifications", e.getMessage());
+			log.error( "Exception Occurred while generateNotification", e.getMessage());
+			log.debug(e.toString());
 		}
 	}
 	
