@@ -34,7 +34,7 @@ span {font-family: 'Open Sans', sans-serif;}
 md-content.md-default-theme, md-content {background: #fff;}
 md-ink-bar {display:none;}
 md-tabs[md-border-bottom] md-tabs-wrapper {border: none;}
-md-tabs .md-tab, md-tabs .md-tab.md-active {font-size:14px; font-weight:600; color:#671C9D;text-transform: none;}
+md-tabs .md-tab, md-tabs .md-tab.md-active {font-size:14px; font-weight:600; color:#1ab4e9;text-transform: none;}
 md-tabs .md-tab.md-active {border-left:1px solid #C5C5C5; border-top:1px solid #C5C5C5; border-right:1px solid #C5C5C5;}
 .md-tab {line-height: 18px;}
 
@@ -47,7 +47,7 @@ a:link {font-size: 13px !important;}
 
 .ds-outer-container {width:100%; display:flex; flex-wrap: nowrap; align-items: stretch; }
 .ds-outer-container2 {width:100%; display:flex; flex-wrap: nowrap ;align-items: stretch; height: calc(100% - 39px)}
-.ds-leftpanel-title {background: #671C9D; font-size:18px; font-weight: 600; padding: 0 5px 0 10px; display: block;color:#fff; line-height:39px;}
+.ds-leftpanel-title {background: #1ab4e9; font-size:18px; font-weight: 600; padding: 0 5px 0 10px; display: block;color:#fff; line-height:39px;}
 
 .ds-grid-bg {background: url("../images/grid.png")}
 
@@ -106,7 +106,7 @@ background: #F1F1F1; line-height:34px;height:34px; border-bottom: 1px solid #C5C
 .ds-list2 li label {line-height: 15px; font-size:13px; color:#06000A;}
 .ds-list2 li label.ds-label1 {font-size:12px;font-weight:600;color:#5D5D5D;}
 .ds-list2 li .mdl-button {padding-left:3px; font-weight:normal; padding-right:5px; min-width:20px;height: 20px; line-height:20px; position:relative; top:-2px;}
-.ds-list2 li .mdl-button .material-icons {font-size:15px;color: #671C9D;}
+.ds-list2 li .mdl-button .material-icons {font-size:15px;color: #1ab4e9;}
 .ds-label2 {position:relative; top:-3px;}
 
 
@@ -191,7 +191,7 @@ height: 25px; line-height: 25px; padding:0;border-radius:0; min-width:50px; text
 
 .ds-btn-container {display:flex;justify-content: center; center; align-items: center;}
 .ds-btn-container .mdl-button { text-transform: initial; height: 38px;color: #636363;}
-.ds-section-heading label, .ds-section-heading2 label {color:#671C9D; font-weight:600; padding-left:9px; }
+.ds-section-heading label, .ds-section-heading2 label {color:#1ab4e9; font-weight:600; padding-left:9px; }
 .btn-delete-toggle {padding-right:5px;}
 .btn-clear-canvas {padding-left:5px; padding-right:8px;}
 .btn-download {padding-left:5px !important; padding-right:8px !important;}
@@ -201,7 +201,7 @@ height: 25px; line-height: 25px; padding:0;border-radius:0; min-width:50px; text
 .ds-btn-container .mdl-button.btn-validate[disabled] {color: #BDBDBD; background:#EFEFEF; }
 .ds-btn-container .mdl-button.btn-validate[disabled] .icon-validate {background: url("../images/ds-icons/validate_disabled_icon.png");position:relative;top:-2px;margin-right: 5px;}
 
-.ds-btn-container .mdl-button.btn-validate.enabled {color:#671C9D;}
+.ds-btn-container .mdl-button.btn-validate.enabled {color:#1ab4e9;}
 .ds-btn-container .mdl-button.btn-validate.enabled .icon-validate {background: url("../images/ds-icons/validate_enable_icon.png");}
 
 .ds-btn-container .mdl-button.btn-validate.active {color: #238f11; }
@@ -211,12 +211,12 @@ height: 25px; line-height: 25px; padding:0;border-radius:0; min-width:50px; text
 .ds-btn-container .mdl-button.btn-run[disabled] .icon-run {background: url("../images/ds-icons/run_disabled_icon.png");position:relative;top:-2px;margin-right: 5px;}
 
 
-.ds-btn-container .mdl-button.btn-save {color: #671C9D; font-weight:600; }
+.ds-btn-container .mdl-button.btn-save {color: #1ab4e9; font-weight:600; }
 .ds-btn-container .mdl-button.btn-save i {margin-right: 7px;font-size: 16px }
 .ds-btn-container .mdl-button.btn-save[disabled] {color: #BDBDBD;background:#EFEFEF;  }
 .ds-btn-container .mdl-button.btn-save[disabled] .icon-run {background: url("../images/ds-icons/run_disabled_icon.png");position:relative;top:-2px;margin-right: 5px;}
 
-.ds-btn-container .mdl-button.btn-delete {color: #671C9D; font-weight:600; padding-left: 8px; padding-right: 8px;}
+.ds-btn-container .mdl-button.btn-delete {color: #1ab4e9; font-weight:600; padding-left: 8px; padding-right: 8px;}
 .ds-btn-container .mdl-button.btn-delete i {margin-right: 7px;font-size: 16px }
 .ds-btn-container .mdl-button.btn-delete[disabled] {color: #BDBDBD;background:#EFEFEF;  }
 .ds-btn-container .mdl-button.btn-delete[disabled] .icon-run {background: url("../images/ds-icons/run_disabled_icon.png");position:relative;top:-2px;margin-right: 5px;}

@@ -21,9 +21,9 @@ limitations under the License.
 /* ---------- validation -------------*/
 .validation-container{padding:0; margin: 0 -8px;}
 .validation-container .box-layout{border:1px solid #e0e0e0 ; padding:5px 5px 0 5px;}
-.box-layout .box-layout-title{border-bottom: 1px solid #e0e0e0; padding:2px 5px; margin: 0 -5px; color:#671c9d; font-weight: 600;}
+.box-layout .box-layout-title{border-bottom: 1px solid #e0e0e0; padding:2px 5px; margin: 0 -5px; color:#1ab4e9; font-weight: 600;}
 .box-layout .box-layout-title span{white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis; width:90%; display:inline-block;}
-.box-layout-title i, .box-layout-title i a {float:right; font-size: 16px; padding: 1px 0; color:#671c9d;}
+.box-layout-title i, .box-layout-title i a {float:right; font-size: 16px; padding: 1px 0; color:#1ab4e9;}
 .list-validation{padding: 5px 0px 0px; min-height: 335px;}
 .list-validation-box{border:1px solid #e0e0e0 ; padding:5px; margin-bottom: 5px; position:relative;}
 .list-validation-box ul{list-style-type:none; font-size: 10px; padding:0; margin:0; line-height: 18px;}
@@ -78,9 +78,9 @@ box-sizing: border-box;}
 .validation-container .timeline-centered .timeline-entry .timeline-entry-inner .timeline-time > span {display: block;}
 .validation-container .timeline-centered .timeline-entry .timeline-entry-inner .timeline-time > span:first-child {font-size: 15px;font-weight: bold;}
 .validation-container .timeline-centered .timeline-entry .timeline-entry-inner .timeline-time > span:last-child {	font-size: 12px;}
-.validation-container .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {background: #fff; color: #671c9d; display: block; width: 18px;height: 18px;-webkit-background-clip: padding-box;
--moz-background-clip: padding;background-clip: padding-box;-webkit-border-radius: 18px;-moz-border-radius: 18px;border-radius: 18px;text-align: center;-moz-box-shadow: 0 0 0 2px #671c9d;
--webkit-box-shadow: 0 0 0 2px #671c9d;box-shadow: 0 0 0 2px #671c9d;line-height: 18px;font-size: 12px;float: left; font-weight: 600; margin-top:9px;
+.validation-container .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {background: #fff; color: #1ab4e9; display: block; width: 18px;height: 18px;-webkit-background-clip: padding-box;
+-moz-background-clip: padding;background-clip: padding-box;-webkit-border-radius: 18px;-moz-border-radius: 18px;border-radius: 18px;text-align: center;-moz-box-shadow: 0 0 0 2px #1ab4e9;
+-webkit-box-shadow: 0 0 0 2px #1ab4e9;box-shadow: 0 0 0 2px #1ab4e9;line-height: 18px;font-size: 12px;float: left; font-weight: 600; margin-top:9px;
 }
 
 .validation-container .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.bg-primary {background-color: #303641;color: #fff;}
@@ -114,12 +114,12 @@ color: #666;font-size: 13px;margin: 0;line-height: 1.428571429;
 .validation-onboarding ul li.progress-status {text-align:center; width:3%;}
 .validation-onboarding ul li.text{padding-top:20px;}
 .validation-onboarding .steppointer{border:1px solid #e0e0e0; border-radius:3px; min-height:168px;}
-.validation-onboarding .steppointer.active{border:1px dashed #671C9D;}
-.validation-onboarding .steppointer.active .imagecontent{border:1px solid #671C9D;}
+.validation-onboarding .steppointer.active{border:1px dashed #1ab4e9;}
+.validation-onboarding .steppointer.active .imagecontent{border:1px solid #1ab4e9;}
 .validation-onboarding .steppointer.active .text, .validation-onboarding .steppointer.removescan .text{color:#2e2f2f;}
 .validation-onboarding .steppointer.removescan, .validation-onboarding .steppointer.removescan .imagecontent{border:1px solid #2e2f2f; position:relative;}
 .count-circle{height: 30px; width: 30px; border-radius: 30px; border: 1px solid #DDD; margin: 20px auto; text-align: center; line-height: 30px; color:#aaa;}
-.validation-onboarding .steppointer.removescan  ~ .count-circle, .validation-onboarding .steppointer.active  ~ .count-circle{height: 30px; width: 30px; border-radius: 30px; border: 1px solid #671C9D; margin: 20px auto; text-align: center; line-height: 30px; color:#671C9D;}
+.validation-onboarding .steppointer.removescan  ~ .count-circle, .validation-onboarding .steppointer.active  ~ .count-circle{height: 30px; width: 30px; border-radius: 30px; border: 1px solid #1ab4e9; margin: 20px auto; text-align: center; line-height: 30px; color:#1ab4e9;}
 .validation-onboarding .steppointer.removescan .removestepicon{top: 4px; margin-top:0;}
 /* icons*/
 .create-solution{background-image: url(../images/popup/ico_create_solution_object_greyX.png); background-repeat: no-repeat; background-position: center;}

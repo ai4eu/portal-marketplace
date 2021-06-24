@@ -34,7 +34,7 @@ limitations under the License.
 	content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <title>{{$root.siteInstanceName}} Market Place</title>
 <script>
-	document.title = "Acumos";
+	document.title = "KI-LAB.NRW";
 </script>
 <!-- Add to homescreen for Chrome on Android -->
 <meta name="mobile-web-app-capable" content="yes">
@@ -55,7 +55,7 @@ limitations under the License.
 <meta name="apple-mobile-web-app-title" content="Material Design Lite">
 <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
 
-<link rel="shortcut icon" href="images/favicon.png">
+<link rel="shortcut icon" href="images/kinrw/favicon.png">
 <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
 <!--
     <link rel="canonical" href="http://www.example.com/">
@@ -86,7 +86,7 @@ limitations under the License.
 <link rel="stylesheet" type="text/css" href="css/xeditable.min.css" />
 
 <!-- Design studio dependencies -->
-<link rel="icon" href="images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="images/kinrw/favicon.png" type="image/x-icon" />
 
 <link rel="stylesheet" type="text/css"
 	href="app/acu-compose/css/dc.graph.css" />
@@ -160,7 +160,7 @@ limitations under the License.
 
 	<div class="mobile-msg-wrapper" ng-show="$root.isMobile">
 		<div class="mobile-msg">
-			<h2 class="font600">Acumos</h2> <h5>is not yet mobile friendly.</h5>
+			<h2 class="font600">KI-LAB.NRW</h2> <h5>is not yet mobile friendly.</h5>
 		</div>
 	</div>
 
@@ -169,8 +169,10 @@ limitations under the License.
 		<header-nav class="mdl-layout__header"></header-nav>
 		<!-- <sidebar-nav class="mdl-layout__drawer initialVal"></sidebar-nav> -->
 		<main class="mdl-layout__content initialVal ">
-		<div ui-view></div>
-		<market-footer></market-footer> </main>
+			<div ui-view></div>
+			<div class="gradient-row"></div>
+			<market-footer></market-footer>
+		</main>
 
 	</div>
 
@@ -183,8 +185,10 @@ limitations under the License.
 			ng-class="{'initialVal' : toggleHeader}"></sidebar-nav>
 		<main class="mdl-layout__content hasClass"
 			ng-class="{'initialVal' : toggleHeader}">
-		<div ui-view></div>
-		<market-footer></market-footer> </main>
+			<div ui-view></div>
+			<div class="gradient-row"></div>
+			<market-footer></market-footer>
+		</main>
 
 	</div>
 

@@ -38,7 +38,7 @@ limitations under the License.
 				<i class="material-icons">menu</i>
 			</button>
 			<span ui-sref="home" class="accumos-header-logo"><img
-				src="../images/kinrw/kinrw.svg" title="Acumos" /></span>
+				src="../images/kinrw/kinrw.svg" title="KI-LAB.NRW" /></span>
 			<span ui-sref="home" ng-click="$root.parentActive = ''"
 						ng-class="{ active: isActive('/home') }"
 						class="cobranding-header-logo"><img
@@ -104,10 +104,6 @@ limitations under the License.
 					<li ng-hide="cas.login==='true' || $root.isSignUp.enabled==='false'" style="cursor: pointer"><sign-up></sign-up></li>
 				</ul>
 			</div>
-			<div class="helplink-container hide-xs">
-				<a class="mdl-navigation__link" target="_blank" href="{{docUrl}}"><span
-					class="icon-header-help"></span></a>
-			</div>
 
 			<nav
 				class="mdl-navigation header-controls hide-sm hide-md hide-lg hide-xl mobheader-icons header-right2">
@@ -145,7 +141,7 @@ limitations under the License.
 					</button>
 					<span ui-sref="home" ng-click="$root.parentActive = ''"
 						class="accumos-header-logo"><img
-						src="../images/kinrw/kinrw.svg" title="Acumos" /></span>
+						src="../images/kinrw/kinrw.svg" title="KI-LAB.NRW" /></span>
 					<span ui-sref="home" ng-click="$root.parentActive = ''"
 						ng-class="{ active: isActive('/home') }"
 						class="cobranding-header-logo"><img ng-show = "$root.coBrandingImage"
@@ -251,7 +247,7 @@ limitations under the License.
 								id="account-info" class="mdl-button header-ddl mdl-js-button"
 								ng-click="openMenu($mdMenu, $event)"> <span class="a-acc-container"><img
 								class="userimg" ng-show="showAltImage"
-								ng-src="images/userprofile/user-profile.png"
+								ng-src="images/kinrw/icon_profile.svg"
 								title="{{userfirstname}}" /> <img class="userimg"
 								ng-show="!showAltImage"
 								ng-src="data:image/PNG;base64,{{userImage}}"
@@ -311,10 +307,6 @@ limitations under the License.
 							<li class="mdl-menu__item" ng-show="provider == 'globaluid'"><a
 								ui-sref="resetPswd">Change Password</a></li>
 						</ul> -->
-						<div class="helplink-container">
-							<a class="mdl-navigation__link" target="_blank" href="{{docUrl}}"><span
-								class="icon-header-help" alt="Help" title="Help"></span></a>
-						</div>
 
 						<!-- <a class="mdl-navigation__link" ng-click="logout()"
 							style="cursor: pointer"><i class="material-icons" alt="LogOut" title="LogOut">power_settings_new</i></a> -->
@@ -355,7 +347,7 @@ limitations under the License.
 								for="demo-menu-lower-right5">
 								<li class="mdl-menu__item user-profile-details"><span><img
 								class="userimg" ng-show="showAltImage"
-								ng-src="images/userprofile/man.png"
+								ng-src="images/kinrw/icon_profile.svg"
 								title="{{userfirstname}}" /> <img class="userimg"
 								ng-show="!showAltImage"
 								ng-src="data:image/PNG;base64,{{userImage}}"
